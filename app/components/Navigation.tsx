@@ -21,7 +21,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-primary-600">丹东旅游</span>
+            <span className="text-xl font-bold text-primary-600">jy丹东旅游</span>
           </Link>
 
           {/* Desktop Navigation */}

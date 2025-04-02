@@ -29,15 +29,21 @@ const locationTypeMap = {
 function getNavigationUrls(location: Location) {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   
+  // 高德地图中坐标顺序是 [lng, lat]，确保 location.position 也是这个顺序
+  const lng = location.position[0];
+  const lat = location.position[1];
+  
+  // 高德地图 API 使用的参数顺序是 lat,lng 而不是 lng,lat
   const gaodeUrls = {
-    mobile: `androidamap://navi?sourceApplication=dandong-guide&lat=${location.position[1]}&lon=${location.position[0]}&dev=0&style=2&name=${encodeURIComponent(location.name)}`,
-    ios: `iosamap://navi?sourceApplication=dandong-guide&lat=${location.position[1]}&lon=${location.position[0]}&dev=0&style=2&name=${encodeURIComponent(location.name)}`,
-    web: `https://uri.amap.com/navigation?to=${location.position[0]},${location.position[1]},${encodeURIComponent(location.name)}&mode=car&coordinate=gaode`
+    mobile: `androidamap://navi?sourceApplication=dandong-guide&lat=${lat}&lon=${lng}&dev=0&style=2&name=${encodeURIComponent(location.name)}`,
+    ios: `iosamap://navi?sourceApplication=dandong-guide&lat=${lat}&lon=${lng}&dev=0&style=2&name=${encodeURIComponent(location.name)}`,
+    web: `https://uri.amap.com/navigation?to=${lng},${lat},${encodeURIComponent(location.name)}&mode=car&coordinate=gaode`
   };
 
+  // 百度地图中，目的地参数是 lat,lng 的顺序
   const baiduUrls = {
-    mobile: `bdapp://map/direction?destination=${location.position[1]},${location.position[0]}&destination_name=${encodeURIComponent(location.name)}&mode=driving&coord_type=gcj02&src=webapp.dandong.openAPIdemo`,
-    web: `https://api.map.baidu.com/direction?destination=latlng:${location.position[1]},${location.position[0]}|name:${encodeURIComponent(location.name)}&mode=driving&coord_type=gcj02&output=html&src=webapp.dandong.openAPIdemo`
+    mobile: `bdapp://map/direction?destination=${lat},${lng}&destination_name=${encodeURIComponent(location.name)}&mode=driving&coord_type=gcj02&src=webapp.dandong.openAPIdemo`,
+    web: `https://api.map.baidu.com/direction?destination=latlng:${lat},${lng}|name:${encodeURIComponent(location.name)}&mode=driving&coord_type=gcj02&output=html&src=webapp.dandong.openAPIdemo`
   };
 
   return { gaodeUrls, baiduUrls };
@@ -163,6 +169,84 @@ const RouteHighlight: React.FC<{ highlight: string }> = ({ highlight }) => (
   </li>
 );
 
+// Add these new components for the map section
+const MapControlButton: React.FC<{
+  onClick: () => void;
+  icon: React.ReactNode;
+  label: string;
+  active?: boolean;
+}> = ({ onClick, icon, label, active = false }) => (
+  <button
+    onClick={onClick}
+    className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium
+                transition-all duration-200 ease-in-out
+                ${active 
+                  ? 'bg-blue-500 text-white shadow-md' 
+                  : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600'}`}
+    title={label}
+  >
+    {icon}
+    <span>{label}</span>
+  </button>
+);
+
+const LocationCard: React.FC<{
+  location: Location;
+  isSelected: boolean;
+  onClick: () => void;
+}> = ({ location, isSelected, onClick }) => (
+  <div
+    onClick={onClick}
+    className={`relative p-4 rounded-xl cursor-pointer transition-all duration-300 ease-in-out
+                ${isSelected 
+                  ? 'bg-blue-50 border-blue-200 shadow-md transform -translate-y-1' 
+                  : 'bg-white hover:bg-gray-50 border-gray-100'}
+                border`}
+  >
+    <div className={`absolute top-0 right-0 w-16 h-16 
+                    ${location.type === 'attraction' ? 'bg-blue-100' :
+                      location.type === 'food' ? 'bg-rose-100' :
+                      'bg-gray-100'}`} 
+         style={{
+           clipPath: 'polygon(100% 0, 0 0, 100% 100%)'
+         }}>
+      <span className={`absolute top-2 right-2 text-xs transform rotate-45 font-medium
+                       ${location.type === 'attraction' ? 'text-blue-600' :
+                         location.type === 'food' ? 'text-rose-600' :
+                         'text-gray-600'}`}>
+        {locationTypeMap[location.type]}
+      </span>
+    </div>
+
+    <div className="space-y-3 pr-8">
+      <h3 className="text-base md:text-lg font-semibold text-gray-900 line-clamp-1">
+        {location.name}
+      </h3>
+      
+      <div className="space-y-2">
+        {location.openingHours && (
+          <p className="text-xs text-gray-500 flex items-center">
+            <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {location.openingHours}
+          </p>
+        )}
+        {location.ticketPrice && (
+          <p className="text-xs text-gray-500 flex items-center">
+            <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                    d="M15 9a2 2 0 10-4 0v5a2 2 0 01-2 2h6m-6-4h4m8 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {location.ticketPrice}
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+);
+
 export default function RoutesPage() {
   const [map, setMap] = useState<any>(null);
   const [markers, setMarkers] = useState<any[]>([]);
@@ -171,7 +255,57 @@ export default function RoutesPage() {
   const [mapLoaded, setMapLoaded] = useState(false);
   const mapContainer = useRef(null);
   const [selectedCircle, setSelectedCircle] = useState<any>(null);
-
+  
+  // Extract all location names from the route schedule - both main locations and mustSee spots
+  const scheduleLocationNames: string[] = [];
+  
+  // Add main locations
+  routes.schedule.forEach(item => {
+    scheduleLocationNames.push(item.location);
+    
+    // Add mustSee locations if they exist
+    if (item.mustSee && Array.isArray(item.mustSee)) {
+      scheduleLocationNames.push(...item.mustSee);
+    }
+  });
+  
+  // Define important attractions that should always be shown
+  const importantAttractions = [
+    "鸭绿江断桥", 
+    "虎山长城", 
+    "抗美援朝纪念馆", 
+    "安东老街", 
+    "中联大酒店", 
+    "丹东站", 
+    "伟豪市场", 
+    "高社长长白山中韩料理店", 
+    "鸭绿江畔", 
+    "老纪烤肉店", 
+    "白马江炭烤",
+    "鸭绿江风景区",
+    "江畔文艺咖啡馆",
+    "东港海鲜市场"
+  ];
+  
+  // Filter locations to only include those in the schedule
+  // Use a more flexible matching approach to handle cases where names might not exactly match
+  const filteredLocations = locations.filter(location => {
+    // Always include important attractions
+    if (importantAttractions.includes(location.name)) {
+      return true;
+    }
+    
+    // Check for exact matches first
+    if (scheduleLocationNames.includes(location.name)) {
+      return true;
+    }
+    
+    // Check if the location name is contained within any schedule location
+    return scheduleLocationNames.some(scheduleName => 
+      scheduleName.includes(location.name) || location.name.includes(scheduleName)
+    );
+  });
+  
   useEffect(() => {
     // 加载高德地图脚本
     const loadMapScript = () => {
@@ -184,12 +318,13 @@ export default function RoutesPage() {
     window.initMap = () => {
       if (mapContainer.current) {
         const newMap = new window.AMap.Map(mapContainer.current, {
-          zoom: 12,
-          center: [124.383314, 40.125729],
+          zoom: 13,
+          center: [124.40189, 40.123693], // 鸭绿江断桥位置
           viewMode: '3D',
           pitch: 0,
           mapStyle: 'amap://styles/normal'
         });
+        
         setMap(newMap);
         setMapLoaded(true);
       }
@@ -253,8 +388,9 @@ export default function RoutesPage() {
     };
 
     // 添加新标记
-    const newMarkers = locations.map((location, index) => {
+    const newMarkers = filteredLocations.map((location, index) => {
       const style = getMarkerStyle(location.type);
+      
       const marker = new window.AMap.Marker({
         position: location.position,
         icon: new window.AMap.Icon({
@@ -282,7 +418,7 @@ export default function RoutesPage() {
 
     // 如果有选中的位置，添加高亮效果
     if (selectedLocation !== null) {
-      const location = locations[selectedLocation];
+      const location = filteredLocations[selectedLocation];
       const circle = new window.AMap.Circle({
         center: location.position,
         radius: 100,
@@ -327,7 +463,7 @@ export default function RoutesPage() {
     if (!map || !mapLoaded) return;
     
     setSelectedLocation(index);
-    const location = locations[index];
+    const location = filteredLocations[index];
 
     // 禁用地图交互
     map.setStatus({
@@ -448,50 +584,78 @@ export default function RoutesPage() {
         </section>
 
         {/* Map Section */}
-        <section className="py-8 bg-white">
+        <section className="py-12 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4">
-            {/* 地图容器 */}
-            <div 
-              ref={mapContainer}
-              className="w-full h-[400px] rounded-lg overflow-hidden shadow-sm mb-8"
-            ></div>
-
-            {/* 地点列表 - 简单九宫格 */}
-            <div className="grid grid-cols-3 gap-2">
-              {locations.map((location, index) => (
-                <div
-                  key={location.id}
-                  onClick={() => handleLocationClick(index)}
-                  className={`relative p-4 bg-white rounded-lg cursor-pointer border overflow-hidden ${
-                    selectedLocation === index ? 'border-primary-500' : 'border-gray-200'
-                  }`}
-                >
-                  {/* 右上角三角形类型标签 */}
-                  <div className={`absolute top-0 right-0 w-12 h-12 ${
-                    location.type === 'attraction' ? 'bg-blue-100' :
-                    location.type === 'food' ? 'bg-rose-100' :
-                    'bg-gray-100'
-                  }`} style={{
-                    clipPath: 'polygon(100% 0, 0 0, 100% 100%)'
-                  }}>
-                    <span className={`absolute top-1 right-1 text-xs transform rotate-45 ${
-                      location.type === 'attraction' ? 'text-blue-600' :
-                      location.type === 'food' ? 'text-rose-600' :
-                      'text-gray-600'
-                    }`}>
-                      {locationTypeMap[location.type]}
-                    </span>
+            <div className="flex flex-col lg:flex-row gap-8">
+              {/* Map Container */}
+              <div className="lg:w-2/3">
+                <div className="relative">
+                  <div 
+                    ref={mapContainer}
+                    className="w-full h-[600px] rounded-2xl overflow-hidden shadow-lg"
+                  />
+                  
+                  {/* Map Controls */}
+                  <div className="absolute top-4 right-4 space-y-2">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-2 shadow-lg space-y-2">
+                      <MapControlButton
+                        onClick={() => map?.setZoom(map.getZoom() + 1)}
+                        icon={
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                          </svg>
+                        }
+                        label="放大"
+                      />
+                      <MapControlButton
+                        onClick={() => map?.setZoom(map.getZoom() - 1)}
+                        icon={
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                          </svg>
+                        }
+                        label="缩小"
+                      />
+                    </div>
+                    
+                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-2 shadow-lg">
+                      <MapControlButton
+                        onClick={() => map?.setCenter([124.383314, 40.125729])}
+                        icon={
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                          </svg>
+                        }
+                        label="返回中心"
+                      />
+                    </div>
                   </div>
-
-                  <h3 className="text-xs md:text-base font-medium mb-0 md:mb-2 pr-8">{location.name}</h3>
-                  {location.openingHours && (
-                    <p className="text-xs text-gray-500 hidden md:block">营业时间：{location.openingHours}</p>
-                  )}
-                  {location.ticketPrice && (
-                    <p className="text-xs text-gray-500 hidden md:block">价格：{location.ticketPrice}</p>
-                  )}
                 </div>
-              ))}
+              </div>
+
+              {/* Locations List */}
+              <div className="lg:w-1/3 space-y-4">
+                <div className="bg-white rounded-xl shadow-sm p-4">
+                  <h2 className="text-xl font-semibold mb-4 flex items-center">
+                    <svg className="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                    景点列表
+                  </h2>
+                  <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2 
+                                 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+                    {filteredLocations.map((location, index) => (
+                      <LocationCard
+                        key={location.id}
+                        location={location}
+                        isSelected={selectedLocation === index}
+                        onClick={() => handleLocationClick(index)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -643,6 +807,28 @@ export default function RoutesPage() {
           </div>
         </section>
       </div>
+
+      <style jsx global>{`
+        .scrollbar-thin::-webkit-scrollbar {
+          width: 6px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 3px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+          background: #cbd5e0;
+          border-radius: 3px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+          background: #a0aec0;
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </div>
   );
 } 
