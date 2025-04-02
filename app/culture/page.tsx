@@ -102,7 +102,7 @@ export default function CulturePage() {
                   }}
                 >
                   <div
-                    className={`lg:w-1/2 ${
+                    className={`w-4/5 lg:w-1/2 ${
                       index % 2 === 1 ? "lg:order-2" : ""
                     }`}
                   >

@@ -41,7 +41,7 @@ export default function FoodPage() {
                     animation: `fadeIn 0.5s ease-out forwards ${index * 0.2}s`
                   }}
                 >
-                  <div className={`lg:w-1/2 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <div className={`w-4/5 lg:w-1/2 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                     <div className="relative h-[400px] w-full rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
                       <Image
                         src={category.image}
