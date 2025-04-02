@@ -51,13 +51,6 @@ const itinerary = {
       tips: '推荐冷面、石锅拌饭等特色菜品',
       image: 'https://p6.itc.cn/images01/20210619/4dea743f545c43a1be4549e6b452f16f.jpeg'
     },
-    {
-      time: '20:00-21:30',
-      activity: '江边夜市',
-      description: '体验丹东夜生活，品尝地道小吃',
-      tips: '可以买些海产品作为伴手礼',
-      image: '/images/night-market.jpg'
-    }
   ],
   preparations: [
     {

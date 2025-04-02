@@ -738,18 +738,6 @@ export const routes: Route = {
         },
       ],
     },
-    {
-      time: "20:00-21:30",
-      activity: "江边夜市",
-      location: "丹东市鸭绿江畔夜市",
-      description: "体验丹东夜生活，品尝地道小吃",
-      tips: "可以买些海产品作为伴手礼",
-      transportation: "从餐厅步行可达",
-      recommendations: ["烤海鲜", "特色小吃", "手工艺品", "海产干货"],
-      image: "/images/night-market.jpg",
-      priceRange: "人均30-50元",
-      mustBuy: ["海产干货", "特色小吃", "手工艺品"],
-    },
   ],
   tips: {
     beforeTrip: [
@@ -781,7 +769,7 @@ export const cultures: Culture[] = [
     title: "边境文化",
     description:
       "丹东是中国距离朝鲜最近的城市，鸭绿江将两国一分为二，却又将两国文化紧密相连。在这里，你可以近距离观察朝鲜新义州的生活场景，感受独特的边境文化氛围。乘坐游船，欣赏两岸风光，体验独特的边境风情。",
-    image: "/images/border-culture.jpg",
+    image: "https://dimg04.c-ctrip.com/images/100811000000rh7dqCBE4_R_1600_10000.jpg",
     features: [
       "鸭绿江断桥 - 抗美援朝的历史见证",
       "中朝边境游船体验",
@@ -794,7 +782,7 @@ export const cultures: Culture[] = [
     title: "美食文化",
     description:
       "丹东的美食融合了朝鲜族特色和东北地方特色，以海鲜和朝鲜族美食最为出名。这里的冷面、打糕、海鲜都极具特色。春季可以品尝到最新鲜的海蛎子，夏秋季节则有肥美的梭子蟹，冬季的温泉煮海鲜更是一绝。",
-    image: "/images/food-culture.jpg",
+    image: "https://dimg04.c-ctrip.com/images/100811000000rh7dqCBE4_R_1600_10000.jpg",
     features: [
       "东港海鲜市场 - 品尝最新鲜海鲜",
       "朝鲜族冷面 - 正宗口味",
@@ -807,7 +795,7 @@ export const cultures: Culture[] = [
     title: "红色文化",
     description:
       "丹东是著名的抗美援朝纪念城市，这里保存着许多珍贵的历史遗迹和故事。从鸭绿江断桥到抗美援朝纪念馆，每一处都诉说着那段波澜壮阔的历史。漫步断桥遗址，感受历史的沧桑与震撼。",
-    image: "/images/historical-culture.jpg",
+    image: "https://dimg04.c-ctrip.com/images/100811000000rh7dqCBE4_R_1600_10000.jpg",
     features: [
       "抗美援朝纪念馆 - 感受历史",
       "鸭绿江断桥 - 战争遗迹",
@@ -820,7 +808,7 @@ export const cultures: Culture[] = [
     title: "自然人文",
     description:
       "丹东不仅有独特的地理位置，还拥有壮美的自然景观。从虎山长城到凤凰山，从鸭绿江风光到各色温泉，自然与人文在这里完美融合。春季樱花烂漫，秋季层林尽染，冬季温泉养生，四季皆有不同风情。",
-    image: "/images/natural-culture.jpg",
+    image: "https://dimg04.c-ctrip.com/images/100811000000rh7dqCBE4_R_1600_10000.jpg",
     features: [
       "凤凰山 - 观赏鸭绿江全景",
       "五龙温泉 - 天然温泉胜地",

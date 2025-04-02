@@ -107,6 +107,62 @@ const easeInOutQuad = (t: number) => {
   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 };
 
+// Add these type definitions at the top of the file
+interface WeatherTip {
+  id: string;
+  text: string;
+}
+
+interface WeatherInfo {
+  temperature: string;
+  description: string;
+  tips: WeatherTip[];
+}
+
+interface RouteOverview {
+  duration: string;
+  distance: string;
+  difficulty: string;
+  bestTime: string;
+  highlights: string[];
+}
+
+// Add these components before the main component
+const WeatherTag: React.FC<{ tip: WeatherTip }> = ({ tip }) => (
+  <span
+    className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium
+              bg-blue-50 text-blue-700 hover:bg-blue-100 
+              transform hover:scale-105 transition-all duration-200 ease-in-out
+              shadow-sm hover:shadow cursor-pointer"
+    role="status"
+  >
+    <svg className="w-3 h-3 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
+    </svg>
+    {tip.text}
+  </span>
+);
+
+const InfoItem: React.FC<{ label: string; value: string }> = ({ label, value }) => (
+  <div className="group bg-gray-50 rounded-lg p-3 hover:bg-white hover:shadow-md transition-all duration-200">
+    <p className="text-gray-700">
+      <span className="font-medium text-gray-900">{label}</span>
+      <span className="mx-2 text-gray-300">|</span>
+      <span className="group-hover:text-blue-600 transition-colors duration-200">{value}</span>
+    </p>
+  </div>
+);
+
+const RouteHighlight: React.FC<{ highlight: string }> = ({ highlight }) => (
+  <li className="group flex items-center space-x-3 p-2 rounded-lg
+                hover:bg-gray-50 transition-all duration-200">
+    <span className="flex-shrink-0 h-2 w-2 rounded-full bg-blue-500 
+                   group-hover:bg-blue-600 group-hover:shadow-lg
+                   transform group-hover:scale-110 transition-all duration-200" />
+    <span className="text-gray-600 group-hover:text-gray-900 transition-colors duration-200">{highlight}</span>
+  </li>
+);
+
 export default function RoutesPage() {
   const [map, setMap] = useState<any>(null);
   const [markers, setMarkers] = useState<any[]>([]);
@@ -322,50 +378,74 @@ export default function RoutesPage() {
       
       {/* 路线标题和概览 */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">{routes.title}</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <p className="text-gray-600">出行日期：{routes.date}</p>
-              <div className="mt-4">
-                <h3 className="text-lg font-semibold mb-2">天气信息</h3>
-                <p className="text-gray-600">温度：{routes.weatherInfo.temperature}</p>
-                <p className="text-gray-600">{routes.weatherInfo.description}</p>
-                <div className="mt-2">
+        <section 
+          aria-labelledby="route-overview" 
+          className="bg-white rounded-xl shadow-sm p-8 mb-8 
+                   hover:shadow-lg transform hover:-translate-y-1 
+                   transition-all duration-300 ease-in-out"
+        >
+          <div className="flex items-center justify-between mb-6">
+            <h1 id="route-overview" className="text-3xl font-bold text-gray-900">
+              {routes.title}
+            </h1>
+            <div className="px-4 py-2 bg-blue-50 rounded-lg">
+              <InfoItem label="出行日期" value={routes.date} />
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 space-y-4">
+                <h3 className="text-xl font-semibold text-gray-900 flex items-center">
+                  <svg className="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
+                  </svg>
+                  天气信息
+                </h3>
+                <div className="space-y-3">
+                  <InfoItem label="温度" value={routes.weatherInfo.temperature} />
+                  <p className="text-gray-600 italic bg-white rounded-lg p-3 shadow-sm">
+                    {routes.weatherInfo.description}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-4" role="list" aria-label="天气提示">
                   {routes.weatherInfo.tips.map((tip, index) => (
-                    <span
-                      key={index}
-                      className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm text-gray-700 mr-2 mb-2"
-                    >
-                      {tip}
-                    </span>
+                    <WeatherTag key={`weather-tip-${index}`} tip={{ id: `tip-${index}`, text: tip }} />
                   ))}
                 </div>
               </div>
             </div>
             
-            <div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <p className="text-gray-600">行程时长：{routes.routeOverview.duration}</p>
-                  <p className="text-gray-600">行程距离：{routes.routeOverview.distance}</p>
-                </div>
-                <div>
-                  <p className="text-gray-600">难度：{routes.routeOverview.difficulty}</p>
-                  <p className="text-gray-600">最佳季节：{routes.routeOverview.bestTime}</p>
+            <div className="space-y-6">
+              <div className="bg-white rounded-xl border border-gray-100 p-6 space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-3">
+                    <InfoItem label="行程时长" value={routes.routeOverview.duration} />
+                    <InfoItem label="行程距离" value={routes.routeOverview.distance} />
+                  </div>
+                  <div className="space-y-3">
+                    <InfoItem label="难度" value={routes.routeOverview.difficulty} />
+                    <InfoItem label="最佳季节" value={routes.routeOverview.bestTime} />
+                  </div>
                 </div>
               </div>
-              <div className="mt-4">
-                <h3 className="text-lg font-semibold mb-2">行程亮点</h3>
-                <ul className="list-disc list-inside text-gray-600">
+              
+              <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 space-y-4">
+                <h3 className="text-xl font-semibold text-gray-900 flex items-center">
+                  <svg className="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  行程亮点
+                </h3>
+                <ul className="space-y-2 divide-y divide-gray-100" role="list" aria-label="行程亮点列表">
                   {routes.routeOverview.highlights.map((highlight, index) => (
-                    <li key={index}>{highlight}</li>
+                    <RouteHighlight key={`highlight-${index}`} highlight={highlight} />
                   ))}
                 </ul>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Map Section */}
         <section className="py-8 bg-white">

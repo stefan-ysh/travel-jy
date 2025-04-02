@@ -16,7 +16,7 @@ const nextConfig = {
         hostname: 'p6.itc.cn',
       },
       {
-        protocol: 'https',
+        protocol: 'http',
         hostname: 'www.cnfhs.com',
       },
       {
@@ -38,6 +38,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'p4.itc.cn',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picx.zhimg.com',
       },
     ],
   },
