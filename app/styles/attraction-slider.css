@@ -1,0 +1,64 @@
+/* Attraction Slider Styles */
+.attraction-slider {
+  position: relative;
+}
+
+.attraction-slider .slick-slide {
+  position: relative;
+  height: 12rem;
+}
+
+.attraction-slider .slick-prev,
+.attraction-slider .slick-next {
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+}
+
+.attraction-slider .slick-prev {
+  left: 10px;
+}
+
+.attraction-slider .slick-next {
+  right: 10px;
+}
+
+.attraction-slider .slick-dots {
+  bottom: 10px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+.attraction-slider .slick-dots li {
+  margin: 0 2px;
+}
+
+.attraction-slider .slick-dots li button:before {
+  color: white;
+  opacity: 0.8;
+  font-size: 6px;
+}
+
+.attraction-slider .slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+
+/* Add a gradient overlay to make dots more visible */
+.attraction-slider:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  pointer-events: none;
+  z-index: 1;
+} 
