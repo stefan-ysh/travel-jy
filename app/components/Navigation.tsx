@@ -9,7 +9,7 @@ const navigation = [
   { name: '景点', href: '/attractions' },
   { name: '美食', href: '/food' },
   { name: '文化', href: '/culture' },
-  { name: '路线', href: '/routes' },
+  // { name: '路线', href: '/routes' },
 ];
 
 export default function Navigation() {

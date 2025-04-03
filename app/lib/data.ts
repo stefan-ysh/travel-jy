@@ -318,7 +318,7 @@ export const attractions: Attraction[] = [
         alt: "凤凰山",
       },
       {
-        url: "http://www.cnfhs.com/uploads/allimg/190423/1-1Z4230U921216.jpg",
+        url: "http://www.cnfhs.com/uploads/allimg/190423/1-1Z4230U9494A.jpg",
         alt: "凤凰山",
       },
       {
@@ -630,7 +630,7 @@ export const foodCategories: FoodCategory[] = [
 
 export const restaurants: Restaurant[] = [
   {
-    name: "东港海鲜市场",
+    name: "东港海鲜市场-中国贝都",
     description:
       "丹东最大的海鲜市场，可以买到最新鲜的海产品，还有很多海鲜大排档。",
     address: "丹东市东港市东港海鲜市场",
@@ -638,8 +638,8 @@ export const restaurants: Restaurant[] = [
     image:
       "https://picx.zhimg.com/v2-63abdb063e36c92bb7944fb5ca0e0d59_1440w.jpg",
     location: {
-      lat: 40.1245,
-      lng: 124.3829,
+      lat: 39.905138,
+      lng: 124.150899,
     },
   },
   {
@@ -838,8 +838,8 @@ export const restaurants: Restaurant[] = [
 ];
 
 export const routes: Route = {
-  title: "丹东三日精华游",
-  date: "4月-10月最佳",
+  title: "丹东闺蜜游",
+  date: "4月4日",
   weatherInfo: {
     temperature: "10°C-25°C",
     description: "春秋季节天气舒适，早晚温差较大。",
@@ -861,100 +861,94 @@ export const routes: Route = {
   },
   schedule: [
     {
-      time: "Day 1 (4月4日) 12:00",
-      activity: "抵达丹东",
-      location: "丹东火车站",
+      time: "Day 1 (4月4日) 12:00-13:00",
+      activity: "抵达丹东站",
+      location: "丹东站",
       description:
-        "抵达丹东站，开始轻松愉快的丹东之旅。抵达后先享用午餐，然后前往酒店办理入住。",
-      tips: "抵达后建议先打车前往酒店放下行李，不要背着重物游玩，更轻松舒适。推荐入住断桥对面的中联大酒店，选择江景房可以欣赏到鸭绿江和断桥的绝美景色。丹东物价不高，打车起步价6元，市区景点间交通也建议打车，既不贵又省时间。",
-      transportation: "火车、出租车",
-      image: "https://p1.ssl.qhimg.com/t0117e8c0cc62d55aac.jpg",
-      restaurants: [
-        {
-          name: "高社长长白山中韩料理店",
-          address: "丹东市区",
-          phone: "0415-2188866",
-        },
-      ],
+        "抵达丹东火车站，打车前往酒店办理入住。丹东市区不大，交通便利，起步价6元即可到达市区内的大多数地点。",
+      tips: "建议选择市中心或鸭绿江畔的酒店，方便游览各个景点。中联大酒店有江景房，可以直接欣赏鸭绿江美景。",
+      transportation: "出租车",
+      image:
+        "https://ts1.tc.mm.bing.net/th/id/R-C.d524277a1aca36a2cea44e171646437a?rik=%2fzqSCRpf1YPrqg&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20170823%2fbb269b8ee5c446c8b9131b7ade35ab67.jpeg&ehk=R8F5mQCGCXXe%2fUXTdEWUNbkMGZOLt%2b3qwLbOXiTkKis%3d&risl=&pid=ImgRaw&r=0",
     },
     {
-      time: "Day 1 (4月4日) 14:00-15:30",
+      time: "Day 1 (4月4日) 13:30-15:30",
       activity: "抗美援朝纪念馆参观",
       location: "抗美援朝纪念馆",
       description:
-        "参观抗美援朝纪念馆了解那段波澜壮阔的历史。纪念馆内有大量珍贵文物和史料，还有震撼的全景画展示。每次参观都会有不同的感悟，感恩革命先烈换来今日的太平盛世。",
-      tips: "免费参观，但需要提前在微信小程序预约。馆内禁止拍照，请尊重参观秩序。",
+        "参观抗美援朝纪念馆，这是必去的打卡地！馆内展示了海量战争中的珍贵物品和文献资料，铺天盖地的战争氛围让人深刻感受到和平来之不易，既热血又感动。",
+      tips: "参观需提前预约，完全免费。馆内氛围庄严，请保持安静并尊重历史。由于展品众多，建议预留至少1.5小时参观时间。",
       transportation: "出租车",
       tickets: {
-        price: "免费(需提前预约)",
-        includes: ["馆内参观"],
-        notes: "周一闭馆，请提前在微信小程序预约",
+        price: "免费（需提前预约）",
+        includes: ["馆内全部展区"],
+        notes: "需携带身份证，可通过官方渠道预约",
       },
       image:
-        "https://ts1.tc.mm.bing.net/th/id/R-C.544c81cd7041a81d0b185962c62d6237?rik=fXpUi5W5TKwc9A&riu=http%3a%2f%2fp5.itc.cn%2fq_70%2fimages03%2f20200922%2f0cdf8dce778641ab862e4b8f7330a3cb.jpeg&ehk=lsIOgQgYSFAQd%2bzRCpNtey8s6n6kApxSTVeeFmXhJyA%3d&risl=&pid=ImgRaw&r=0",
-      mustSee: ["主展厅", "全景画馆", "英雄事迹展区"],
+        "https://p4.itc.cn/images01/20210630/803a18a6b117475f8da3c7549bd1dc35.jpeg",
+      mustSee: ["主展厅", "战争实物展示", "历史文献资料", "英雄事迹展示"],
     },
     {
-      time: "Day 1 (4月4日) 16:00-17:30",
-      activity: "高社长中韩料理晚餐",
+      time: "Day 1 (4月4日) 16:00-17:00",
+      activity: "高社长长白山中韩料理",
       location: "高社长长白山中韩料理店",
       description:
         "在高社长长白山中韩料理店享用正宗韩式美食。这家店的韩餐特别好吃，性价比最高，是当地强烈推荐的餐厅。",
       tips: "推荐品尝米酒，可以在大众点评上搜索9.9元抢购套餐，很大一碗，非常划算。",
-      transportation: "出租车",
+      transportation: "出租车（约16分钟）",
       image:
         "https://p6.itc.cn/images01/20210619/4dea743f545c43a1be4549e6b452f16f.jpeg",
       priceRange: "¥60-100/人",
       recommendations: ["米酒", "冷面", "石锅拌饭", "韩式烤肉"],
     },
     {
-      time: "Day 1 (4月4日) 18:00-19:30",
-      activity: "鸭绿江断桥与游船",
+      time: "Day 1 (4月4日) 17:30-18:30",
+      activity: "鸭绿江断桥打卡与游船",
       location: "鸭绿江断桥景区",
       description:
-        "参观断桥遗址，了解抗美援朝历史。沿江漫步，欣赏中朝边境风光，从这里可以直接看到对面的朝鲜。乘坐游船近距离欣赏鸭绿江风光和朝鲜风景，体验跨国界的独特感受。",
-      tips: "江边风大，请带上外套。游船票可以现场购买，也可以在网上预订。晚上断桥会亮灯，景色非常壮观。",
-      transportation: "出租车或步行",
+        "参观断桥遗址，了解抗美援朝历史。站在断裂处，可以清晰看到对面朝鲜太阳楼上的'一心团结'四个大字。鸭绿江游船可近距离观察朝鲜人在工厂农田中劳作的场景，体验独特的跨国界感受。",
+      tips: "傍晚时分光线柔和，适合拍照。如果住在中联大酒店，凭房卡可免上桥门票，房间还标配望远镜，坐在床上就能看朝鲜。（游船可选）",
+      transportation: "出租车（约5分钟）",
       tickets: {
-        price: "断桥¥30/人，游船约¥80/人",
-        includes: ["断桥参观", "可选游船"],
-        notes: "游船需另付费",
+        price: "断桥¥30/人，游船¥60/人",
+        includes: ["断桥参观", "江上游览"],
+        notes: "住中联大酒店可凭房卡免断桥门票",
       },
       image:
         "https://dimg04.c-ctrip.com/images/0EQ4k12000cbjb2yp5417_R_1600_10000.jpg",
-      photoSpots: ["断桥观景台", "江畔栈道", "中朝界碑"],
-      mustSee: ["断桥保存的弹痕", "对岸朝鲜风光", "江边全景"],
+      photoSpots: ["断桥观景台", "断桥断裂处", "朝鲜太阳楼视角", "船上拍摄朝鲜风光"],
+      mustSee: ["断桥保存的弹痕", "朝鲜太阳楼", "'一心团结'四个大字", "朝鲜民众生活场景"],
     },
     {
-      time: "Day 1 (4月4日) 20:00-21:30",
-      activity: "鸭绿江夜景观赏",
-      location: "鸭绿江畔",
+      time: "Day 1 (4月4日) 18:30-21:00",
+      activity: "与亲友聚餐",
+      location: "当地餐厅",
       description:
-        "晚餐后沿江漫步，欣赏璀璨夜景。江对岸朝鲜与中国一侧形成鲜明对比，中方灯火辉煌，朝方一片漆黑。断桥在夜间亮灯后景色尤为壮观。",
-      tips: "晚上注意保暖，可带上相机拍摄夜景。酒店江景房可以直接欣赏夜景，非常方便。",
-      transportation: "步行",
+        "与小妹儿母亲共进晚餐，品尝当地美食，享受温馨的聚会时光。",
+      tips: "丹东的特色美食有朝鲜冷面、海鲜、烤肉等，可以请当地人推荐正宗的餐馆。",
+      transportation: "出租车或步行",
       image:
-        "https://dimg04.c-ctrip.com/images/100811000000rh7dqCBE4_R_1600_10000.jpg",
-      photoSpots: ["江边栈道", "友谊桥夜景", "中朝对比景观"],
+        "https://c-ssl.duitang.com/uploads/item/202001/01/20200101130756_c8MLy.jpeg",
+      priceRange: "¥100-150/人",
     },
     {
-      time: "Day 2 (4月5日) 9:00-10:00",
-      activity: "酒店早餐与出发准备",
-      location: "中联大酒店",
+      time: "Day 1 (4月4日) 21:00",
+      activity: "回酒店休息",
+      location: "酒店",
       description:
-        "享用丰盛早餐，为一天的行程补充能量。准备好水和零食，穿着舒适鞋子。如果入住了断桥对面的中联大酒店江景房，早晨可以欣赏到阳光下的鸭绿江美景。",
-      tips: "整理好随身物品，带上身份证、现金和手机等必要物品。",
-      transportation: "酒店内",
+        "返回酒店休息，为第二天的行程养精蓄锐。如果入住了江景房，可以欣赏鸭绿江夜景。",
+      tips: "晚上江边温度较低，记得多穿衣服。江对岸朝鲜与中国一侧形成鲜明对比，中方灯火辉煌，朝方一片漆黑。",
+      transportation: "出租车或步行",
       image:
-        "https://dimg04.c-ctrip.com/images/100811000000rh7dqCBE4_R_1600_10000.jpg",
+        "https://img3.jiemian.com/101/original/20160531/146469897756646200.jpg",
     },
     {
-      time: "Day 2 (4月5日) 10:30-12:30",
-      activity: "虎山长城",
+      time: "Day 2 (4月5日) 9:00-12:00",
+      activity: "虎山长城（可选）",
       location: "虎山长城景区",
       description:
-        "前往虎山长城。虽然规模不如北京八达岭长城，但登顶后可以俯瞰中朝边境，一眼眺望两国风光，拍照非常出片。沿着长城漫步，感受明代边防工程的雄伟壮观。",
-      tips: "可以乘坐缆车往返，节省体力。山上风大，建议带外套。傍晚时分光线最佳，拍照效果更好。登顶后可眺望对岸朝鲜风光。",
+        "如果体力允许，可以前往虎山长城。虽然规模不如北京八达岭长城，但登顶后可以俯瞰中朝边境，一眼眺望两国风光，拍照非常出片。",
+      tips: "可以乘坐缆车往返，节省体力。山上风大，建议带外套。如果感到疲劳，可以选择跳过这个景点，直接前往东港吃海鲜。",
       transportation: "出租车",
       tickets: {
         price: "¥65/人",
@@ -963,114 +957,134 @@ export const routes: Route = {
       },
       image:
         "https://dimg04.c-ctrip.com/images/01011120008n5rc4h0A83_R_1600_10000.jpg",
-      mustSee: ["一眼望三国景观", "山顶观景台", "长城古迹"],
+      mustSee: ["山顶观景台", "长城古迹"],
     },
     {
-      time: "Day 2 (4月5日) 13:00-14:30",
-      activity: "午餐与休息",
-      location: "市区餐厅",
+      time: "Day 2 (4月5日) 9:00-10:30",
+      activity: "锦江山公园观景",
+      location: "锦江山公园",
       description:
-        "返回市区享用午餐，稍作休息。可以选择品尝当地特色美食，如海鲜、朝鲜族料理等。",
-      tips: "午餐后可以短暂休息，为下午的行程养精蓄锐。",
+        "如果不想去虎山长城，锦江山公园是个更轻松的选择。爬上锦江亭，可以俯瞰整个丹东市区和朝鲜新义州，视野极佳。这里是观赏两国风光的绝佳位置，可以清晰看到对岸朝鲜的建筑和风景，景色非常壮观。",
+      tips: "爬山相对轻松，但仍建议穿舒适的鞋子。山顶风大，带件外套。携带相机或望远镜效果更佳。",
       transportation: "出租车",
+      tickets: {
+        price: "免费",
+        includes: ["公园游览"],
+        notes: "",
+      },
       image:
-        "https://p6.itc.cn/images01/20210619/4dea743f545c43a1be4549e6b452f16f.jpeg",
-      priceRange: "¥50-100/人",
-      recommendations: ["海鲜", "朝鲜族美食", "当地特色"],
+        "https://dimg04.c-ctrip.com/images/0102v12000fa7qy1i3876_R_1600_10000.jpg",
+      photoSpots: ["锦江亭", "山顶观景台", "朝鲜新义州全景"],
+      mustSee: ["朝鲜新义州全景", "鸭绿江全貌", "丹东市区景观"],
     },
     {
-      time: "Day 2 (4月5日) 15:00-17:00",
-      activity: "特产购物",
-      location: "丹东市区购物街",
+      time: "Day 2 (4月5日) 12:00-13:30",
+      activity: "东港海鲜市场游览",
+      location: "东港海鲜市场-中国贝都",
       description:
-        "在市区购物街选购丹东特产和纪念品，如海产品、人参、鹿茸、边境小商品等。",
-      tips: "注意比较价格，可适当讲价。海产品建议选择真空包装便于携带。",
-      transportation: "出租车",
-      image: "/images/shopping.jpg",
-      mustBuy: ["海产干货", "人参", "边境特色商品", "朝鲜纪念品"],
+        "前往东港海鲜市场，这里被誉为\"中国贝都\"，以丰富的贝类和海鲜品种闻名。春季是品尝海蛎子、蛤蜊等贝类的最佳季节，新鲜度和口感都达到顶峰。",
+      tips: "从市区到东港需要约1小时车程，可根据实际情况调整，或选择市区内其他海鲜餐厅。建议找当地人推荐的店铺，价格实惠质量好。",
+      transportation: "出租车（约1小时）",
+      image:
+        "https://picx.zhimg.com/v2-63abdb063e36c92bb7944fb5ca0e0d59_1440w.jpg",
+      priceRange: "¥80-150/人",
+      recommendations: ["鲜海蛎子", "蛤蜊", "梭子蟹", "海螺", "扇贝"],
     },
     {
-      time: "Day 2 (4月5日) 17:30-20:00",
-      activity: "安东老街夜游",
+      time: "Day 2 (4月5日) 11:00-12:30",
+      activity: "自由活动",
+      location: "随机",
+      description:
+        "注意车辆安全，交通比较混乱",
+      tips: "购物休闲喝咖啡等",
+      transportation: "",
+      image:
+        "https://www.thelist.com/img/gallery/reasons-youll-always-feel-better-if-you-go-clothing-shopping-with-a-friend/intro-1668094253.jpg",
+      // priceRange: "",
+      // recommendations: [],
+    },
+    {
+      time: "Day 2 (4月5日) 13:30-15:30",
+      activity: "安东老街逛街",
       location: "安东老街",
       description:
-        "前往安东老街，这是一个充满烟火气的地方，汇集了各种美食、小吃和特色商品。在这里可以体验当地的夜生活，感受丹东的市井风情。",
+        "前往安东老街，这是一个充满烟火气的地方，汇集了各种美食、小吃和特色商品。在这里可以体验当地的市井文化，感受丹东的风情。",
       tips: "老街上人流较多，注意保管好随身物品。可以品尝各种当地小吃，也可以购买一些特色纪念品。",
-      transportation: "出租车或步行",
+      transportation: "出租车",
       image:
         "https://dimg04.c-ctrip.com/images/0105n12000ez9e1ah41D3_R_10000_1200.jpg",
       priceRange: "因消费项目而异",
       recommendations: ["特色小吃", "手工艺品", "文创商品", "传统美食"],
     },
     {
-      time: "Day 2 (4月5日) 20:00-21:30",
-      activity: "老纪烤肉店晚餐",
-      location: "老纪烤肉店",
+      time: "Day 2 (4月5日) 16:00-17:30",
+      activity: "烧烤晚餐",
+      location: "丹东烤肉店",
       description:
-        "品尝地道的东北烧烤，以新鲜的肉类和丰富的烧烤品种闻名，调料独特，味道浓郁，体验正宗的东北烧烤文化。",
-      tips: "这里的烤肉很受欢迎，高峰期可能需要等位，建议提前预约。招牌特色烤肉和烤蘑菇不容错过。",
+        "品尝丹东烧烤，据说是全国天花板级别的美食。推荐好朋友海鲜烧烤、旮旯烤肉、金盾烤肉等，也可自行探索，不必刻意追求网红店。",
+      tips: "丹东的烧烤店很多，随便找一家都可能让你惊喜。网红店可能需要排队，建议选择本地人常去的店铺。",
       transportation: "出租车或步行",
       image:
         "https://bkimg.cdn.bcebos.com/pic/7aec54e736d12f2e09d25e4b42c2d562843568c2?x-bce-process=image/format,f_auto/resize,m_lfit,limit_1,h_960",
       priceRange: "¥80-120/人",
-      recommendations: ["特色烤肉", "烤蘑菇", "烤五花肉", "烤海鲜"],
+      recommendations: ["特色烤肉", "烤海鲜", "烤蘑菇", "烤五花肉"],
     },
     {
-      time: "Day 3 (4月6日) 9:30-12:00",
+      time: "Day 2 (4月5日) 18:00-20:00",
+      activity: "江边休闲与夜景",
+      location: "鸭绿江畔",
+      description:
+        "自由活动时间，可以沿江漫步欣赏江景，或在江边咖啡馆休息。推荐hijojo咖啡馆，可以悠闲地看江景，度过惬意的傍晚时光。",
+      tips: "晚上江边气温较低，记得多穿衣服。可以带上相机拍摄夜景，江对岸朝鲜与中国一侧形成鲜明对比，景色独特。江边有很多租衣服拍照的可供选择，还有鸽子可以喂食。",
+      transportation: "步行",
+      image:
+        "https://dimg04.c-ctrip.com/images/0EQ4k12000cbjb2yp5417_R_1600_10000.jpg",
+      photoSpots: ["江边栈道", "友谊桥夜景", "中朝对比景观"],
+    },
+    {
+      time: "Day 2 (4月5日) 20:00",
+      activity: "回酒店休息",
+      location: "酒店",
+      description:
+        "返回酒店休息，为明天的行程养精蓄锐。",
+      tips: "可以整理一下购买的纪念品和拍摄的照片，回顾一天的美好时光。",
+      transportation: "出租车或步行",
+      image:
+        "https://tse1-mm.cn.bing.net/th/id/OIP-C.V4VeUCIBeRh2JyFD14ry2wHaE8?rs=1&pid=ImgDetMain",
+    },
+    {
+      time: "Day 3 (4月6日) 9:00-10:00",
       activity: "睡懒觉与轻松早午餐",
       location: "酒店及周边",
       description:
-        "第三天无需早起，可以睡到自然醒。享用轻松早午餐，然后在酒店周边随意逛逛，购买一些纪念品或特产。",
-      tips: "酒店一般可提供行李寄存服务，方便退房后继续游玩。如果入住中联大酒店江景房，可以再次欣赏鸭绿江美景。",
+        "最后一天可以睡到自然醒，不用早起。起床后可以在酒店或附近享用一顿悠闲的早午餐。",
+      tips: "酒店一般可提供行李寄存服务，方便退房后继续游玩。",
       transportation: "步行",
-      image: "/images/relaxing_morning.jpg",
+      image: "https://healthcare.utah.edu/sites/g/files/zrelqx136/files/media/images/2024/GettyImages-1357733473-sleep.jpg",
       recommendations: ["酒店早餐", "附近咖啡馆", "便捷小吃"],
     },
     {
-      time: "Day 3 (4月6日) 12:00-14:00",
-      activity: "伟豪市场逛吃",
+      time: "Day 3 (4月6日) 10:00-11:00",
+      activity: "伟豪早市体验",
       location: "伟豪市场",
       description:
-        "在伟豪市场一站式品尝丹东各种特色小吃和美食，可以边逛边吃，体验当地的市井文化和美食风情。",
-      tips: "市场内人多，注意保管好随身物品。建议少量多吃，尝试更多种类的美食。",
+        "来东北一定要感受这份独特的烟火气！伟豪早市是丹东最具活力的市场，这里有各种令人惊喜的物美价廉商品：99元一箱的草莓、几块钱一斤的黄蚬子、冻梨、大榛子应有尽有，市场氛围热闹非凡。",
+      tips: "早市人多，注意保管好随身物品。建议早点去，摊位多选择多。附近有丹东打卡墙（位于赫氏燕窝附近），逛完市场步行几分钟即可到达，很适合拍照留念。",
       transportation: "出租车",
       image:
         "https://picx.zhimg.com/v2-63abdb063e36c92bb7944fb5ca0e0d59_1440w.jpg",
-      priceRange: "¥50-80/人",
-      recommendations: ["各式小吃", "地方特色", "海鲜小吃", "传统甜品"],
+      priceRange: "¥50-100/人",
+      recommendations: ["应季水果", "海鲜", "特产小吃", "丹东打卡墙"],
+      mustBuy: ["99元草莓", "黄蚬子", "冻梨", "大榛子", "当地特产"],
     },
     {
-      time: "Day 3 (4月6日) 14:00-16:00",
-      activity: "自由活动或再游断桥",
-      location: "丹东市区或鸭绿江断桥",
-      description:
-        "根据个人喜好，在市区自由活动，可以再次游览喜欢的景点，或再去断桥看看白天的景色。",
-      tips: "如果时间允许，可以再去断桥看看，白天和晚上的景色有很大不同。",
-      transportation: "步行或出租车",
-      image:
-        "https://dimg04.c-ctrip.com/images/0EQ4k12000cbjb2yp5417_R_1600_10000.jpg",
-    },
-    {
-      time: "Day 3 (4月6日) 16:00-18:00",
-      activity: "白马江炭烤晚餐",
-      location: "白马江炭烤",
-      description:
-        "在返程前享用一顿美味的炭火烤制海鲜和肉类，白马江炭烤以食材新鲜，独特的烧烤技术而闻名，是丹东之行的完美句点。",
-      tips: "推荐尝试他们的特色炭烤海鲜，烤肉和各式小菜。",
+      time: "Day 3 (4月6日) 15:00",
+      activity: "行李整理与返程准备",
+      location: "酒店",
+      description: "收拾行李，准备返程。根据返程车次适当安排时间，确保不会赶车。",
+      tips: "建议预留充足时间到达火车站，避免赶车紧张。",
       transportation: "出租车",
-      image:
-        "https://bkimg.cdn.bcebos.com/pic/7aec54e736d12f2e09d25e4b42c2d562843568c2?x-bce-process=image/format,f_auto/resize,m_lfit,limit_1,h_960",
-      priceRange: "¥100-150/人",
-      recommendations: ["炭烤海鲜", "特色烤肉", "手工小菜", "烤蔬菜"],
-    },
-    {
-      time: "Day 3 (4月6日) 晚上",
-      activity: "返程",
-      location: "丹东火车站",
-      description: "返回火车站，踏上返程旅途。结束丹东轻松愉快的旅行。",
-      tips: "建议提前2小时到达火车站，避免赶车紧张。",
-      transportation: "出租车",
-      image: "/images/departure.jpg",
+      image: "https://www.travelite.com/media/85/36/74/1691139857/koffergroesen.webp",
     },
   ],
   tips: {
@@ -1079,6 +1093,7 @@ export const routes: Route = {
       "查看天气预报，准备合适衣物",
       "如需住宿，提前预订中联大酒店江景房",
       "下载离线地图和翻译软件",
+      "特殊时期，注意准备卫生用品",
       "准备充足现金，部分小店可能不便刷卡",
     ],
     duringTrip: [
@@ -1120,7 +1135,7 @@ export const cultures: Culture[] = [
       "丹东的美食融合了朝鲜族特色和东北地方特色，以海鲜和朝鲜族美食最为出名。这里的冷面、打糕、海鲜都极具特色。春季可以品尝到最新鲜的海蛎子，夏秋季节则有肥美的梭子蟹，冬季的温泉煮海鲜更是一绝。",
     image: "https://pic.nximg.cn/file/20170805/1687102_183547843038_2.jpg",
     features: [
-      "东港海鲜市场 - 品尝最新鲜海鲜",
+      "东港海鲜市场 - 中国贝都",
       "朝鲜族冷面 - 正宗口味",
       "特色小吃 - 打糕、锅包肉",
       "温泉煮海鲜体验",
@@ -1253,9 +1268,9 @@ export const locations: Location[] = [
   },
   {
     id: "donggang-seafood",
-    name: "东港海鲜市场",
+    name: "东港海鲜市场-中国贝都",
     type: "food",
-    position: [124.150913, 39.904922],
+    position: [124.150899, 39.905138],
     description: "新鲜海鲜，品种丰富。",
     openingHours: "06:00-18:00",
   },
@@ -1319,4 +1334,30 @@ export const locations: Location[] = [
     openingHours: "16:00-01:00",
     phone: "0415-2122145",
   },
+  {
+    id: "yibukuan-border",
+    name: "中朝边境一步跨",
+    type: "attraction",
+    position: [124.523427,40.228160],
+    description: "中朝边境一步跨，可以体验一步跨两国的感觉。",
+    openingHours: "06:00-18:00",
+  },
+  {
+    id: "shanghekou-guomen",
+    name: "上河口国门",
+    type: "attraction",
+    position: [124.880519,40.460929],
+    
+    description: "上河口国门，可以打卡国门。",
+  },
+  {
+    id: "jinshanjiang-park",
+    name: "锦江山公园",
+    type: "attraction",
+    position: [124.382649,40.136004],
+    description: "锦江山公园，可以俯瞰整个丹东市区和朝鲜新义州，视野极佳。",
+    openingHours: "06:00-18:00",
+    ticketPrice: "免费",
+  },
+  
 ];
