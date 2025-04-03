@@ -630,7 +630,7 @@ export default function RoutesPage() {
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
         <div className="relative z-10 text-center">
-          <h1 className="text-4xl font-bold mb-4">丹东闺蜜游</h1>
+          <h1 className="text-4xl font-bold mb-4">JY丹东闺蜜游</h1>
           <p className="text-xl">2025-04-04</p>
         </div>
       </section>

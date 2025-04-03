@@ -697,7 +697,7 @@ export const restaurants: Restaurant[] = [
 ];
 
 export const routes: Route = {
-  title: "丹东闺蜜游",
+  title: "JY丹东闺蜜游",
   date: "4月4日",
   weatherInfo: {
     temperature: "10°C-25°C",
