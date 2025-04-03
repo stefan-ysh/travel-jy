@@ -154,6 +154,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: "www.travelite.com"
+      },
+      {
+        protocol: 'https',
+        hostname: "qcloud.dpfile.com"
       }
     ],
   },

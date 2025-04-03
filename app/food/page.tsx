@@ -762,30 +762,6 @@ export default function FoodPage() {
             </div>
           </div>
         </section>
-
-        {/* Call to Action */}
-        <section className="bg-gray-50 py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="heading-2 mb-6">开启您的美食之旅</h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              让我们带您探索丹东的美食文化， 品尝最地道的美味。
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/attractions"
-                className="inline-block bg-secondary-600 hover:bg-secondary-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
-              >
-                查看景点美食
-              </Link>
-              <Link
-                href="/routes"
-                className="inline-block bg-white hover:bg-gray-100 text-secondary-600 border border-secondary-600 px-8 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
-              >
-                美食行程推荐
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
 
       <style jsx global>{`

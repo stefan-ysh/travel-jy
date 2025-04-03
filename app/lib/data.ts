@@ -869,7 +869,7 @@ export const routes: Route = {
       tips: "建议选择市中心或鸭绿江畔的酒店，方便游览各个景点。中联大酒店有江景房，可以直接欣赏鸭绿江美景。",
       transportation: "出租车",
       image:
-        "https://ts1.tc.mm.bing.net/th/id/R-C.d524277a1aca36a2cea44e171646437a?rik=%2fzqSCRpf1YPrqg&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20170823%2fbb269b8ee5c446c8b9131b7ade35ab67.jpeg&ehk=R8F5mQCGCXXe%2fUXTdEWUNbkMGZOLt%2b3qwLbOXiTkKis%3d&risl=&pid=ImgRaw&r=0",
+        "/images/station.png",
     },
     {
       time: "Day 1 (4月4日) 13:30-15:30",
@@ -885,7 +885,7 @@ export const routes: Route = {
         notes: "需携带身份证，可通过官方渠道预约",
       },
       image:
-        "https://p4.itc.cn/images01/20210630/803a18a6b117475f8da3c7549bd1dc35.jpeg",
+        "/images/attractions/kmyc-museum.png",
       mustSee: ["主展厅", "战争实物展示", "历史文献资料", "英雄事迹展示"],
     },
     {
@@ -897,7 +897,7 @@ export const routes: Route = {
       tips: "推荐品尝米酒，可以在大众点评上搜索9.9元抢购套餐，很大一碗，非常划算。",
       transportation: "出租车（约16分钟）",
       image:
-        "https://p6.itc.cn/images01/20210619/4dea743f545c43a1be4549e6b452f16f.jpeg",
+        "/images/food/高社长长白山中韩料理.png",
       priceRange: "¥60-100/人",
       recommendations: ["米酒", "冷面", "石锅拌饭", "韩式烤肉"],
     },
@@ -915,7 +915,7 @@ export const routes: Route = {
         notes: "住中联大酒店可凭房卡免断桥门票",
       },
       image:
-        "https://dimg04.c-ctrip.com/images/0EQ4k12000cbjb2yp5417_R_1600_10000.jpg",
+        "/images/attractions/鸭绿江断桥.png",
       photoSpots: ["断桥观景台", "断桥断裂处", "朝鲜太阳楼视角", "船上拍摄朝鲜风光"],
       mustSee: ["断桥保存的弹痕", "朝鲜太阳楼", "'一心团结'四个大字", "朝鲜民众生活场景"],
     },
@@ -928,7 +928,7 @@ export const routes: Route = {
       tips: "丹东的特色美食有朝鲜冷面、海鲜、烤肉等，可以请当地人推荐正宗的餐馆。",
       transportation: "出租车或步行",
       image:
-        "https://c-ssl.duitang.com/uploads/item/202001/01/20200101130756_c8MLy.jpeg",
+        "/images/亲友相聚.png",
       priceRange: "¥100-150/人",
     },
     {
@@ -956,7 +956,7 @@ export const routes: Route = {
         notes: "缆车需另付费",
       },
       image:
-        "https://dimg04.c-ctrip.com/images/01011120008n5rc4h0A83_R_1600_10000.jpg",
+        "/images/attractions/虎山长城.png",
       mustSee: ["山顶观景台", "长城古迹"],
     },
     {
@@ -973,7 +973,7 @@ export const routes: Route = {
         notes: "",
       },
       image:
-        "https://dimg04.c-ctrip.com/images/0102v12000fa7qy1i3876_R_1600_10000.jpg",
+        "/images/attractions/锦江山公园.png",
       photoSpots: ["锦江亭", "山顶观景台", "朝鲜新义州全景"],
       mustSee: ["朝鲜新义州全景", "鸭绿江全貌", "丹东市区景观"],
     },
@@ -986,7 +986,7 @@ export const routes: Route = {
       tips: "从市区到东港需要约1小时车程，可根据实际情况调整，或选择市区内其他海鲜餐厅。建议找当地人推荐的店铺，价格实惠质量好。",
       transportation: "出租车（约1小时）",
       image:
-        "https://picx.zhimg.com/v2-63abdb063e36c92bb7944fb5ca0e0d59_1440w.jpg",
+        "/images/food/东港海鲜市场.png",
       priceRange: "¥80-150/人",
       recommendations: ["鲜海蛎子", "蛤蜊", "梭子蟹", "海螺", "扇贝"],
     },
@@ -999,7 +999,7 @@ export const routes: Route = {
       tips: "购物休闲喝咖啡等",
       transportation: "",
       image:
-        "https://www.thelist.com/img/gallery/reasons-youll-always-feel-better-if-you-go-clothing-shopping-with-a-friend/intro-1668094253.jpg",
+        "/images/自由活动.png",
       // priceRange: "",
       // recommendations: [],
     },
@@ -1012,7 +1012,7 @@ export const routes: Route = {
       tips: "老街上人流较多，注意保管好随身物品。可以品尝各种当地小吃，也可以购买一些特色纪念品。",
       transportation: "出租车",
       image:
-        "https://dimg04.c-ctrip.com/images/0105n12000ez9e1ah41D3_R_10000_1200.jpg",
+        "/images/attractions/安东老街.png",
       priceRange: "因消费项目而异",
       recommendations: ["特色小吃", "手工艺品", "文创商品", "传统美食"],
     },
@@ -1038,7 +1038,7 @@ export const routes: Route = {
       tips: "晚上江边气温较低，记得多穿衣服。可以带上相机拍摄夜景，江对岸朝鲜与中国一侧形成鲜明对比，景色独特。江边有很多租衣服拍照的可供选择，还有鸽子可以喂食。",
       transportation: "步行",
       image:
-        "https://dimg04.c-ctrip.com/images/0EQ4k12000cbjb2yp5417_R_1600_10000.jpg",
+        "/images/attractions/江边.png",
       photoSpots: ["江边栈道", "友谊桥夜景", "中朝对比景观"],
     },
     {
@@ -1060,7 +1060,7 @@ export const routes: Route = {
         "最后一天可以睡到自然醒，不用早起。起床后可以在酒店或附近享用一顿悠闲的早午餐。",
       tips: "酒店一般可提供行李寄存服务，方便退房后继续游玩。",
       transportation: "步行",
-      image: "https://healthcare.utah.edu/sites/g/files/zrelqx136/files/media/images/2024/GettyImages-1357733473-sleep.jpg",
+      image: "/images/sleep.png",
       recommendations: ["酒店早餐", "附近咖啡馆", "便捷小吃"],
     },
     {
@@ -1072,7 +1072,7 @@ export const routes: Route = {
       tips: "早市人多，注意保管好随身物品。建议早点去，摊位多选择多。附近有丹东打卡墙（位于赫氏燕窝附近），逛完市场步行几分钟即可到达，很适合拍照留念。",
       transportation: "出租车",
       image:
-        "https://picx.zhimg.com/v2-63abdb063e36c92bb7944fb5ca0e0d59_1440w.jpg",
+        "/images/food/weihao.png",
       priceRange: "¥50-100/人",
       recommendations: ["应季水果", "海鲜", "特产小吃", "丹东打卡墙"],
       mustBuy: ["99元草莓", "黄蚬子", "冻梨", "大榛子", "当地特产"],

@@ -610,7 +610,7 @@ export default function RoutesPage() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://files.dandong.gov.cn//files/CMS/2022-08-10/1660116892150062.jpg"
+            src="/images/index-banner.png"
             alt="丹东风景"
             fill
             className="object-cover"
@@ -939,32 +939,6 @@ export default function RoutesPage() {
                   ))}
                 </ul>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              准备好开始您的丹东之旅了吗？
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              查看更多详细信息，让您的旅程更加完美。
-            </p>
-            <div className="space-x-4">
-              <Link
-                href="/food"
-                className="inline-block bg-secondary-600 hover:bg-secondary-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:transform hover:scale-105"
-              >
-                美食攻略
-              </Link>
-              <Link
-                href="/attractions"
-                className="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-3 rounded-lg text-lg font-medium transition-all duration-300 hover:transform hover:scale-105"
-              >
-                景点详情
-              </Link>
             </div>
           </div>
         </section>
