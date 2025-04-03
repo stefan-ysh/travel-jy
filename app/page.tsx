@@ -318,6 +318,8 @@ export default function RoutesPage() {
   const [mapLoaded, setMapLoaded] = useState(false);
   const mapContainer = useRef(null);
   const [selectedCircle, setSelectedCircle] = useState<any>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const locationsPerPage = 9;
 
   // Extract all location names from the route schedule - both main locations and mustSee spots
   const scheduleLocationNames: string[] = [];
@@ -373,6 +375,15 @@ export default function RoutesPage() {
         location.name.includes(scheduleName)
     );
   });
+
+  // Calculate which locations to display based on pagination
+  const indexOfLastLocation = currentPage * locationsPerPage;
+  const indexOfFirstLocation = indexOfLastLocation - locationsPerPage;
+  const currentLocations = filteredLocations.slice(indexOfFirstLocation, indexOfLastLocation);
+  const totalPages = Math.ceil(filteredLocations.length / locationsPerPage);
+
+  // Function to change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   useEffect(() => {
     // 加载高德地图脚本
@@ -739,9 +750,9 @@ export default function RoutesPage() {
         {/* Map Section */}
         <section className="py-12 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col lg:flex-row gap-8">
+            <div className="flex flex-col gap-8">
               {/* Map Container */}
-              <div className="lg:w-2/3">
+              <div className="w-full">
                 <div className="relative">
                   <div
                     ref={mapContainer}
@@ -776,7 +787,7 @@ export default function RoutesPage() {
               </div>
 
               {/* Locations List */}
-              <div className="lg:w-1/3 space-y-4">
+              <div className="w-full space-y-4">
                 <div className="bg-white rounded-xl shadow-sm p-4">
                   <h2 className="text-xl font-semibold mb-4 flex items-center">
                     <svg
@@ -792,19 +803,92 @@ export default function RoutesPage() {
                     </svg>
                     景点列表
                   </h2>
-                  <div
-                    className="space-y-3 max-h-[500px] overflow-y-auto pr-2 
-                                 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
-                  >
-                    {filteredLocations.map((location, index) => (
-                      <LocationCard
+                  <div className="grid grid-cols-3 gap-2">
+                    {currentLocations.map((location, index) => (
+                      <div
                         key={location.id}
-                        location={location}
-                        isSelected={selectedLocation === index}
-                        onClick={() => handleLocationClick(index)}
-                      />
+                        onClick={() => handleLocationClick(indexOfFirstLocation + index)}
+                        className={`relative p-2 rounded-lg border border-gray-200 cursor-pointer transition-all duration-200 
+                                   ${
+                                     selectedLocation === (indexOfFirstLocation + index)
+                                       ? "bg-blue-50 shadow-md"
+                                       : "bg-white hover:bg-gray-50"
+                                   }`}
+                      >
+                        <div
+                          className={`absolute top-0 right-0 w-6 h-6 
+                                    ${
+                                      location.type === "attraction"
+                                        ? "bg-blue-100"
+                                        : location.type === "food"
+                                        ? "bg-rose-100"
+                                        : "bg-gray-100"
+                                    }`}
+                          style={{
+                            clipPath: "polygon(100% 0, 0 0, 100% 100%)",
+                          }}
+                        >
+                          <span
+                            className={`absolute top-0.5 right-0.5 text-[8px] transform rotate-45 font-medium
+                                      ${
+                                        location.type === "attraction"
+                                          ? "text-blue-600"
+                                          : location.type === "food"
+                                          ? "text-rose-600"
+                                          : "text-gray-600"
+                                      }`}
+                          >
+                            {locationTypeMap[location.type]}
+                          </span>
+                        </div>
+                        
+                        <div className="pt-1">
+                          <h3 className="text-xs font-semibold text-gray-900 line-clamp-2 h-8">
+                            {location.name}
+                          </h3>
+                          
+                          {location.openingHours && (
+                            <p className="text-[10px] text-gray-500 truncate mt-1">
+                              {location.openingHours}
+                            </p>
+                          )}
+                        </div>
+                      </div>
                     ))}
                   </div>
+                  
+                  {/* Pagination Controls */}
+                  {totalPages > 1 && (
+                    <div className="flex justify-center items-center mt-4 space-x-2">
+                      <button
+                        onClick={() => paginate(Math.max(1, currentPage - 1))}
+                        disabled={currentPage === 1}
+                        className={`px-2 py-1 rounded ${
+                          currentPage === 1
+                            ? "bg-gray-100 text-gray-400"
+                            : "bg-blue-500 text-white hover:bg-blue-600"
+                        }`}
+                      >
+                        ←
+                      </button>
+                      
+                      <span className="text-sm text-gray-500">
+                        第 {currentPage} 页 / 共 {totalPages} 页
+                      </span>
+                      
+                      <button
+                        onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
+                        disabled={currentPage === totalPages}
+                        className={`px-2 py-1 rounded ${
+                          currentPage === totalPages
+                            ? "bg-gray-100 text-gray-400"
+                            : "bg-blue-500 text-white hover:bg-blue-600"
+                        }`}
+                      >
+                        →
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -812,7 +896,7 @@ export default function RoutesPage() {
         </section>
 
         {/* Detailed Schedule */}
-        <section className="py-16">
+        <section className="py-5">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">详细行程</h2>
             <div className="max-w-4xl mx-auto">
