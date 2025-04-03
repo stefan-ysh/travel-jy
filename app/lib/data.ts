@@ -943,7 +943,7 @@ export const routes: Route = {
       description: "收拾行李，准备返程。根据返程车次适当安排时间，确保不会赶车。",
       tips: "建议预留充足时间到达火车站，避免赶车紧张。",
       transportation: "出租车",
-      image: "https://www.travelite.com/media/85/36/74/1691139857/koffergroesen.webp",
+      image: "/images/行李整理与返程准备.png",
     },
   ],
   tips: {

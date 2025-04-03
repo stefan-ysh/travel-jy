@@ -510,7 +510,7 @@ export default function FoodPage() {
             </div>
             
             {/* 餐厅推荐线路 */}
-            <div className="mt-16">
+            {/* <div className="mt-16">
               <h3 className="text-2xl font-bold text-center mb-8">美食游推荐线路</h3>
               <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
                 <div className="space-y-6">
@@ -586,7 +586,7 @@ export default function FoodPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
