@@ -129,10 +129,6 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'qcloud.dpfile.com',
-      },
-      {
-        protocol: 'https',
         hostname: 'p9.itc.cn',
       },
       {
@@ -143,22 +139,6 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'img3.jiemian.com',
       },
-      {
-        protocol: 'https',
-        hostname: "www.thelist.com"
-      },
-      {
-        protocol: 'https',
-        hostname: "healthcare.utah.edu"
-      },
-      {
-        protocol: 'https',
-        hostname: "www.travelite.com"
-      },
-      {
-        protocol: 'https',
-        hostname: "qcloud.dpfile.com"
-      }
     ],
   },
 };
