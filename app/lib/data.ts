@@ -636,73 +636,10 @@ export const restaurants: Restaurant[] = [
     address: "丹东市东港市东港海鲜市场",
     openTime: "全天营业",
     image:
-      "https://picx.zhimg.com/v2-63abdb063e36c92bb7944fb5ca0e0d59_1440w.jpg",
+      "/images/food/东港海鲜市场.png",
     location: {
       lat: 39.905138,
       lng: 124.150899,
-    },
-  },
-  {
-    name: "鸭绿江畔餐厅",
-    description: "临江而建的特色餐厅，可以一边品尝美食一边欣赏江景。",
-    address: "丹东市振兴区鸭绿江畔",
-    openTime: "10:00-22:00",
-    image:
-      "https://dimg04.c-ctrip.com/images/100c1f000001gsxg063A8_R_1600_10000.jpg",
-    location: {
-      lat: 40.1164,
-      lng: 124.3935,
-    },
-  },
-  {
-    name: "朝鲜族特色餐厅",
-    description: "正宗的朝鲜族美食，环境优雅，服务周到。",
-    address: "丹东市振兴区锦山大街",
-    openTime: "10:30-21:30",
-    image:
-      "https://p6.itc.cn/images01/20210619/4dea743f545c43a1be4549e6b452f16f.jpeg",
-    location: {
-      lat: 40.1164,
-      lng: 124.3935,
-    },
-  },
-  {
-    name: "丹东小粑鱼馆",
-    description:
-      "专营丹东当地特色小粑鱼，味道鲜美，环境干净整洁，是品尝本地特色的好去处。",
-    address: "丹东市振兴区七经街24号",
-    openTime: "10:00-21:00",
-    image:
-      "https://pic4.zhimg.com/v2-3891f98574acf813be34c8d894c5efc9_1440w.jpg",
-    location: {
-      lat: 40.1198,
-      lng: 124.3856,
-    },
-  },
-  {
-    name: "百乐烧鸡店",
-    description:
-      "百年老字号，传统工艺制作的熏鸡，口感独特，是丹东的名片之一，也是馈赠亲友的佳品。",
-    address: "丹东市振兴区锦山大街88号",
-    openTime: "08:30-19:00",
-    image:
-      "https://picx.zhimg.com/70/v2-420913935514721704aa92c11ec9e019_1440w.avis?source=172ae18b&biz_tag=Post",
-    location: {
-      lat: 40.1212,
-      lng: 124.3843,
-    },
-  },
-  {
-    name: "老边饺子",
-    description:
-      "正宗东北水饺，皮薄馅大，口味多样，价格实惠，是本地人常去的餐厅。",
-    address: "丹东市振兴区人民路56号",
-    openTime: "09:00-20:30",
-    image:
-      "https://pic1.zhimg.com/v2-7c5b2b9b9b9b9b9b9b9b9b9b9b9b9b9_1440w.jpg",
-    location: {
-      lat: 40.123,
-      lng: 124.3867,
     },
   },
   {
@@ -710,51 +647,25 @@ export const restaurants: Restaurant[] = [
     description:
       "集合多家美食的复古风情街区，可以品尝到丹东各式特色小吃和美食，体验当地传统文化。",
     address: "丹东市振兴区人民路49号",
-    openTime: "10:00-22:00",
+    openTime: "10:00-21:30",
     image:
-      "https://dimg04.c-ctrip.com/images/0105n12000ez9e1ah41D3_R_10000_1200.jpg",
+      "/images/attractions/安东老街.png",
     location: {
-      lat: 40.1201,
-      lng: 124.3884,
+      lat: 40.104901,
+      lng: 124.360000,
     },
   },
   {
-    name: "江畔文艺咖啡馆",
+    name: "Hi JOJO",
     description:
       "位于鸭绿江畔的文艺咖啡馆，环境优雅，视野绝佳，可一边品尝咖啡甜点，一边欣赏江景。",
     address: "丹东市振兴区鸭绿江畔步行街",
     openTime: "10:00-22:00",
     image:
-      "https://pic2.zhimg.com/v2-9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9_1440w.jpg",
+      "/images/food/hijojo.png",
     location: {
-      lat: 40.1167,
-      lng: 124.3925,
-    },
-  },
-  {
-    name: "金达莱朝鲜族餐厅",
-    description:
-      "提供正宗朝鲜族美食，冷面、辣白菜、石锅拌饭等应有尽有，还有传统朝鲜族舞蹈表演。",
-    address: "丹东市振兴区锦山大街178号",
-    openTime: "11:00-21:00",
-    image:
-      "https://p6.itc.cn/images01/20210619/4dea743f545c43a1be4549e6b452f16f.jpeg",
-    location: {
-      lat: 40.1224,
-      lng: 124.387,
-    },
-  },
-  {
-    name: "虎山长城农家乐",
-    description:
-      "位于虎山长城景区附近的农家餐厅，提供当地特色山野菜和农家菜，环境朴实，价格实惠。",
-    address: "丹东市振安区虎山长城景区附近",
-    openTime: "08:00-19:00",
-    image:
-      "https://pic3.zhimg.com/v2-9b9b9b9b9b9b9b9b9b9b9b9b9b9b9b9_1440w.jpg",
-    location: {
-      lat: 40.451,
-      lng: 124.3346,
+      lat: 40.115547,
+      lng: 124.390184,
     },
   },
   {
@@ -764,49 +675,10 @@ export const restaurants: Restaurant[] = [
     address: "丹东市振兴区人民路附近",
     openTime: "10:00-21:00",
     image:
-      "https://ts1.cn.mm.bing.net/th/id/R-C.9ac8cc9e528cbba4d10c3d11b7fe7b2a?rik=wCDVnS1v5KDhGw&riu=http%3a%2f%2fqcloud.dpfile.com%2fpc%2fHNDxRCH1VvFzUL8Cbi9LPvS6TwD6Ob0wA1NVl4PBx1F_C7TtJ6p1Fyk-PqxBYl5XjoJrvItByyS4HHaWdXyO_DrXIaWutJls2xCVbatkhjYMCsjI_WYFnQduouWMpvLi8KE0OStfxQRNOEYQhXuqmw.jpg&ehk=b8jtmgMnFMGYPk9IHtcPPx2Ksd9BKNaG%2bq8%2b4Ewtmdw%3d&risl=&pid=ImgRaw&r=0",
+      "/images/food/戴家叉子.png",
     location: {
-      lat: 40.1235,
-      lng: 124.385,
-    },
-  },
-  {
-    name: "金家高丽火盆",
-    description:
-      "正宗朝鲜族火锅餐厅，特色火盆料理结合新鲜海鲜和肉类，风味独特，环境优雅，体验朝鲜族饮食文化的绝佳选择。",
-    address: "丹东市振兴区锦山大街",
-    openTime: "11:00-21:30",
-    image:
-      "https://ts1.cn.mm.bing.net/th/id/R-C.e72abb8c8bca1b41d8d51aadb9e7a91c?rik=UkC9RlpTn%2fYY%2fQ&riu=http%3a%2f%2fp0.meituan.net%2fdeal%2f2c7276c10c6c88ef88bb25cd9ba9c9b9106350.jpg%40640w_400h_1e_1c_1l%7cwatermark%3d1%26%26r%3d1%26p%3d9%26x%3d2%26y%3d2%26relative%3d1%26o%3d20&ehk=%2fbmxvriI9qfnSlG2XmQRpDnJA3RkpDy3%2bjLQj9qULnY%3d&risl=&pid=ImgRaw&r=0",
-    location: {
-      lat: 40.124118212,
-      lng: 124.389055,
-    },
-  },
-  {
-    name: "天福汤饭",
-    description:
-      "专营朝鲜族特色汤饭，用料讲究，汤底鲜美，是品尝朝鲜族传统美食的不错选择。",
-    address: "丹东市振兴区六经街",
-    openTime: "10:30-20:00",
-    image:
-      "https://qcloud.dpfile.com/pc/CQKsKsB5hcnDDBpFXSj08F68D74rHhZg6qCDNeCIDGX-D6GqBRl8-rVIsTwbvQVCjoJrvItByyS4HHaWdXyO_DrXIaWutJls2xCVbatkhjYMCsjI_WYFnQduouWMpvLi8KE0OStfxQRNOEYQhXuqmw.jpg",
-    location: {
-      lat: 40.1215,
-      lng: 124.3855,
-    },
-  },
-  {
-    name: "老纪烤肉店",
-    description:
-      "地道的东北烧烤，以新鲜的肉类和丰富的烧烤品种闻名，调料独特，味道浓郁，是体验东北烧烤文化的好去处。",
-    address: "丹东市振兴区七经街",
-    openTime: "16:00-01:00",
-    image:
-      "https://qcloud.dpfile.com/pc/V5-TQgfSozYSiAHIf8UA0qsm2YEdjXcxl1jv_1MHeYN8vJstzfHxIxUF4FT9PCOH_Gd2X_zVZWVwjnwKFbkIbw.jpg",
-    location: {
-      lat: 40.126607,
-      lng: 124.391885,
+      lat: 40.129555,
+      lng: 124.389723,
     },
   },
   {
@@ -816,23 +688,10 @@ export const restaurants: Restaurant[] = [
     address: "丹东市振兴区六纬路",
     openTime: "08:00-19:00",
     image:
-      "https://ts1.cn.mm.bing.net/th/id/R-C.fca66a85526e6f4a8a7a77f88a4a8c67?rik=tbzjPh2OTvKdpA&riu=http%3a%2f%2fwww.chinadaily.com.cn%2ffood%2fimg%2fattachement%2jpg%2fsite1%2f20160714%2f448a5bd61c8d18f6307d12.jpg&ehk=yktFaCzLgIi%2bfuQxSM%2fcFwDI%2fYzk%2fTB4x3qn1W6hEu4%3d&risl=&pid=ImgRaw&r=0",
+      "/images/food/weihao.png",
     location: {
-      lat: 40.121,
-      lng: 124.384,
-    },
-  },
-  {
-    name: "白马江炭烤",
-    description:
-      "以炭火烤制的海鲜和肉类为特色，食材新鲜，独特的烧烤技术保留了食材的原汁原味，是享受晚餐的理想选择。",
-    address: "丹东市振兴区锦山大街",
-    openTime: "16:30-23:30",
-    image:
-      "https://bkimg.cdn.bcebos.com/pic/7aec54e736d12f2e09d25e4b42c2d562843568c2?x-bce-process=image/format,f_auto/resize,m_lfit,limit_1,h_960",
-    location: {
-      lat: 40.1218,
-      lng: 124.3853,
+      lat: 40.116246,
+      lng: 124.37768,
     },
   },
 ];
