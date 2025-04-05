@@ -6,9 +6,12 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: '首页', href: '/' },
+  { name: '交通指南', href: '/#transportation-guide' },
+  { name: '红黑榜', href: '/#red-black-list' },
   { name: '景点', href: '/attractions' },
   { name: '美食', href: '/food' },
   { name: '文化', href: '/culture' },
+  { name: '打卡拍照点', href: '/checkin' },
   // { name: '路线', href: '/routes' },
 ];
 
@@ -62,16 +65,55 @@ export default function Navigation() {
             }`}
           >
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              <Link
+                href="/#transportation-guide"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                交通指南
+              </Link>
+              <Link
+                href="/#red-black-list"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                红黑榜 / 踩坑提醒
+              </Link>
+              <Link
+                href="/checkin"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                打卡点
+              </Link>
+              <Link
+                href="/attractions"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                景点
+              </Link>
+              <Link
+                href="/food"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                美食
+              </Link>
+              <Link
+                href="/culture"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                文化
+              </Link>
+              <Link
+                href="/about"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary-600"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                关于
+              </Link>
             </div>
           </div>
         )}

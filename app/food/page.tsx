@@ -45,178 +45,43 @@ const FoodRecommendCard = ({
   </div>
 );
 
-// 添加特色小吃部分
-// const SnackSection = () => {
-//   const snacks = [
-//     {
-//       title: "鸭绿江冷面",
-//       description:
-//         "丹东最具特色的美食，劲道的面条，鲜美的高汤，以及丰富的配料使其成为必尝美食。",
-//       imageUrl:
-//         "https://pic1.zhimg.com/v2-9bab6a545a564e126ac406f6987430c2_1440w.jpg",
-//       tags: ["招牌美食", "朝鲜族特色", "夏季首选"],
-//     },
-//     {
-//       title: "小粒黄蚬子",
-//       description: "丹东特产，肉质肥美，鲜香可口，是当地最受欢迎的海鲜之一。",
-//       imageUrl:
-//         "https://pic3.zhimg.com/v2-b79d75a53df2f49db83504fed4b6b86a_1440w.jpg",
-//       tags: ["海鲜", "特产", "营养丰富"],
-//     },
-//     {
-//       title: "百乐熏鸡",
-//       description:
-//         '又称"百乐烧鸡"和"田家熏鸡"，已有100多年的历史。因做工精细，味道极佳，曾荣获辽宁省肉蛋禽制品质量第一名。',
-//       imageUrl:
-//         "https://picx.zhimg.com/70/v2-420913935514721704aa92c11ec9e019_1440w.avis?source=172ae18b&biz_tag=Post",
-//       tags: ["特色烤制", "农家风味", "传统工艺"],
-//     },
-//     {
-//       title: "东港大黄蚬子",
-//       description: "肉质饱满，营养丰富，可蒸、炒、炖，鲜美无比。",
-//       imageUrl:
-//         "https://pics2.baidu.com/feed/b999a9014c086e06f8f3dbd9d397e3fb0bd1cb7d.jpeg@f_auto?token=d0b35afed070211295556b49d5b10164",
-//       tags: ["海鲜", "当季推荐", "高蛋白"],
-//     },
-//   ];
-
-//   return (
-//     <section className="py-12 bg-gray-50">
-//       <div className="container mx-auto px-4">
-//         <div className="text-center mb-12">
-//           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-//             特色小吃推荐
-//           </h2>
-//           <p className="text-gray-600 max-w-2xl mx-auto">
-//             品尝丹东独特的当地小吃，感受舌尖上的边境风情，这些美食将带给您难忘的味觉体验。
-//           </p>
-//         </div>
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-//           {snacks.map((snack, index) => (
-//             <FoodRecommendCard
-//               key={index}
-//               title={snack.title}
-//               description={snack.description}
-//               imageUrl={snack.imageUrl}
-//               tags={snack.tags}
-//             />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// 添加时令美食推荐部分
-// const SeasonalFoodSection = () => {
-//   const seasonalFoods = [
-//     {
-//       season: "春季",
-//       foods: [
-//         {
-//           name: "春季海蛎子",
-//           description: "春季的海蛎子肉质饱满，鲜美多汁，富含蛋白质和矿物质。",
-//           imageUrl: "https://pics2.baidu.com/feed/8ad4b31c8701a18b00da2c5bf4d51f072938fefe.jpeg@f_auto?token=d3379589c8fe5db1f553f61348acb5a1"
-//         },
-//         {
-//           name: "清蒸河豚",
-//           description: "丹东的河豚经过专业处理，保留了鲜美的口感，是春季限定美食。",
-//           imageUrl: "/images/steamed-puffer.jpg"
-//         },
-//         {
-//           name: "春笋炒肉",
-//           description: "采用当地新鲜春笋，与优质猪肉一起炒制，鲜嫩爽口。",
-//           imageUrl: "/images/bamboo-shoots.jpg"
-//         }
-//       ]
-//     },
-//     {
-//       season: "夏季",
-//       foods: [
-//         {
-//           name: "朝鲜冷面",
-//           description: "炎炎夏日的解暑佳品，弹性十足的面条配以冰镇高汤，清爽可口。",
-//           imageUrl: "/images/summer-coldnoodle.jpg"
-//         },
-//         {
-//           name: "鲜虾水饺",
-//           description: "用当地新鲜捕获的虾制作的馅料，鲜香四溢，口感独特。",
-//           imageUrl: "/images/shrimp-dumplings.jpg"
-//         }
-//       ]
-//     },
-//     {
-//       season: "秋季",
-//       foods: [
-//         {
-//           name: "梭子蟹",
-//           description: "秋季的梭子蟹最为肥美，肉质饱满，营养丰富，是丹东海鲜的代表。",
-//           imageUrl: "/images/autumn-crab.jpg"
-//         },
-//         {
-//           name: "烤全羊",
-//           description: "秋季进补的上佳选择，采用传统烤制工艺，肉质鲜嫩，风味独特。",
-//           imageUrl: "/images/roasted-lamb.jpg"
-//         }
-//       ]
-//     },
-//     {
-//       season: "冬季",
-//       foods: [
-//         {
-//           name: "温泉煮海鲜",
-//           description: "利用丹东特有的温泉资源，煮制各类海鲜，保留了最原始的鲜美味道。",
-//           imageUrl: "/images/hotspring-seafood.jpg"
-//         },
-//         {
-//           name: "暖锅",
-//           description: "东北特色火锅，加入当地特产食材，温暖又美味，是冬季必备美食。",
-//           imageUrl: "/images/winter-hotpot.jpg"
-//         }
-//       ]
-//     }
-//   ];
-
-//   return (
-//     <section className="py-16 bg-white">
-//       <div className="container mx-auto px-4">
-//         <h2 className="text-3xl font-bold text-center mb-12">时令美食推荐</h2>
-//         <div className="space-y-12">
-//           {seasonalFoods.map((season, index) => (
-//             <div
-//               key={index}
-//               className="bg-gray-50 rounded-xl p-6 shadow-sm"
-//               style={{
-//                 opacity: 0,
-//                 animation: `fadeIn 0.5s ease-out forwards ${index * 0.2}s`
-//               }}
-//             >
-//               <h3 className="text-xl font-bold text-gray-900 mb-6 inline-block bg-secondary-100 text-secondary-800 px-4 py-2 rounded-lg">{season.season}</h3>
-//               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-//                 {season.foods.map((food, foodIndex) => (
-//                   <div key={foodIndex} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-//                     <div className="relative h-48">
-//                       <Image
-//                         src={food.imageUrl}
-//                         alt={food.name}
-//                         fill
-//                         className="object-cover"
-//                       />
-//                     </div>
-//                     <div className="p-4">
-//                       <h4 className="font-bold text-gray-900 mb-2">{food.name}</h4>
-//                       <p className="text-sm text-gray-600">{food.description}</p>
-//                     </div>
-//                   </div>
-//                 ))}
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
+// 添加传统老字号餐厅卡片组件
+const TraditionalRestaurantCard = ({ name, price, address, dishes, index }: { name: string, price: string, address: string, dishes: string, index: number }) => (
+  <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-orange-100"
+    style={{
+      opacity: 0,
+      animation: `fadeIn 0.5s ease-out forwards ${index * 0.1}s`,
+    }}
+  >
+    <div className="relative">
+      <div className="h-36 bg-gradient-to-r from-orange-100 to-amber-100 flex items-center justify-center">
+        <Image 
+          src={`/images/food/${index + 1}.jpg`} 
+          alt={name}
+          width={300}
+          height={200}
+          className="object-cover h-full w-full"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/images/food-placeholder.jpg';
+          }}
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+      </div>
+      <div className="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+        {price}
+      </div>
+    </div>
+    <div className="p-4">
+      <h3 className="text-lg font-bold mb-1 text-gray-900">{name}</h3>
+      <p className="text-sm text-gray-500 mb-2">{address}</p>
+      <div className="flex items-center">
+        <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">招牌菜</span>
+        <span className="ml-2 text-sm text-gray-700">{dishes}</span>
+      </div>
+    </div>
+  </div>
+);
 
 // 美食体验指南部分
 const FoodGuideSection = () => {
@@ -508,85 +373,109 @@ export default function FoodPage() {
                 </div>
               ))}
             </div>
-            
-            {/* 餐厅推荐线路 */}
-            {/* <div className="mt-16">
-              <h3 className="text-2xl font-bold text-center mb-8">美食游推荐线路</h3>
-              <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 bg-secondary-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4">
-                      <span className="font-bold">1</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">经典三日美食路线 (网友推荐)</h4>
-                      <p className="text-gray-600 mb-2">丹东三日游推荐美食安排</p>
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-800 rounded-full text-sm">Day 1: 午餐-戴家叉子 → 晚餐-金家高丽火盆</span>
-                      </div>
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-800 rounded-full text-sm">Day 2: 午餐-天福汤饭 → 晚餐-老纪烤肉店</span>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-800 rounded-full text-sm">Day 3: 午餐-伟豪市场逛吃 → 晚餐-白马江炭烤</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 bg-secondary-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4">
-                      <span className="font-bold">2</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">断桥美食之旅 (推荐时间: 半天)</h4>
-                      <p className="text-gray-600 mb-2">探索断桥附近的特色美食</p>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-800 rounded-full text-sm">戴家叉子(午餐) → 江畔文艺咖啡馆(下午茶) → 金家高丽火盆(晚餐)</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 bg-secondary-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4">
-                      <span className="font-bold">3</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">朝鲜美食体验 (推荐时间: 半天)</h4>
-                      <p className="text-gray-600 mb-2">品尝正宗朝鲜族美食</p>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-800 rounded-full text-sm">天福汤饭(午餐) → 金达莱朝鲜族餐厅(晚餐) → 朝鲜族特色餐厅(小吃)</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 bg-secondary-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4">
-                      <span className="font-bold">4</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">本地特色美食一日游 (推荐时间: 1天)</h4>
-                      <p className="text-gray-600 mb-2">体验丹东本地美食文化</p>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-800 rounded-full text-sm">伟豪市场(早午餐) → 百乐烧鸡店(购买特产) → 安东老街(小吃) → 老纪烤肉店(晚餐)</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 bg-secondary-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4">
-                      <span className="font-bold">5</span>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-1">虎山长城美食游 (推荐时间: 1天)</h4>
-                      <p className="text-gray-600 mb-2">结合景点和美食的完美体验</p>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-800 rounded-full text-sm">老边饺子(早餐) → 虎山长城游览 → 虎山长城农家乐(午餐) → 返回市区 → 白马江炭烤(晚餐)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          </div>
+        </section>
+
+        {/* Traditional Restaurants Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
+                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
               </div>
-            </div> */}
+              <h2 className="text-3xl font-bold mb-2">丹东美食老字号</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                这里精选了丹东10家值得打卡的老字号餐厅，涵盖了从海鲜、烤肉到特色小吃的各种美食，让您的味蕾来一场满足之旅。
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <TraditionalRestaurantCard 
+                name="皇朝海鲜酒店" 
+                price="人均: ¥194" 
+                address="边境经济合作区口岸贸易区l区B座101室" 
+                dishes="皇朝酱蟹，黄蚬子" 
+                index={0} 
+              />
+              <TraditionalRestaurantCard 
+                name="老字号杨家吊炉饼" 
+                price="人均: ¥12" 
+                address="十一经街9号" 
+                dishes="吊炉饼，豆腐汤" 
+                index={1} 
+              />
+              <TraditionalRestaurantCard 
+                name="邢记侨光拉面一部(兴七路店)" 
+                price="人均: ¥17" 
+                address="青年大街64号" 
+                dishes="牛肉拉面，焖子" 
+                index={2} 
+              />
+              <TraditionalRestaurantCard 
+                name="八街老太太" 
+                price="人均: ¥58" 
+                address="八经街冬梅烟酒超市旁" 
+                dishes="小牛肋条，牛肉串" 
+                index={3} 
+              />
+              <TraditionalRestaurantCard 
+                name="永盛海鲜家常菜(黄海大道店)" 
+                price="人均: ¥115" 
+                address="黄海大道与中央大道交叉口" 
+                dishes="黄蚬子，大鱿鱼" 
+                index={4} 
+              />
+              <TraditionalRestaurantCard 
+                name="果园核桃烤肉" 
+                price="人均: ¥96" 
+                address="201国道鸭绿江村一组" 
+                dishes="牛肉，鱿鱼" 
+                index={5} 
+              />
+              <TraditionalRestaurantCard 
+                name="锦龙汤饭(香江佳园店)" 
+                price="人均: ¥49" 
+                address="青年大街香江家园附近" 
+                dishes="牛尾汤，烤五花肉" 
+                index={6} 
+              />
+              <TraditionalRestaurantCard 
+                name="赵姨鸡蛋果子(二中小区店)" 
+                price="人均: ¥10" 
+                address="振七北街兴三路交叉口" 
+                dishes="煎饼果子，烤冷面" 
+                index={7} 
+              />
+              <TraditionalRestaurantCard 
+                name="佳和饺子馆(江城大街店)" 
+                price="人均: ¥45" 
+                address="江城大街244-8号" 
+                dishes="白菜海螺水饺，海胆馅饺子" 
+                index={8} 
+              />
+              <TraditionalRestaurantCard 
+                name="金珠打糕(火车站店)" 
+                price="人均: ¥21" 
+                address="五经街站前大市场对面" 
+                dishes="原味打糕，豆面打糕" 
+                index={9} 
+              />
+            </div>
+            
+            <div className="flex justify-center mt-8">
+              <div className="bg-amber-50 p-4 rounded-lg max-w-2xl border border-amber-200">
+                <p className="text-sm text-amber-800 flex items-start">
+                  <svg className="w-5 h-5 mr-2 flex-shrink-0 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                  </svg>
+                  <span>
+                    小贴士：丹东的海鲜以鲜活出名，黄蚬子是当地特色，口感甜脆；烤冷面和鸡蛋果子是丹东特色小吃，价格实惠；餐厅价格可能因季节变化，建议提前电话咨询；高峰期热门店铺可能需要排队，请合理安排用餐时间。
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
