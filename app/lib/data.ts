@@ -60,6 +60,20 @@ export interface Restaurant {
   };
 }
 
+export interface TraditionalRestaurant {
+  name: string;
+  price: string;
+  address: string;
+  dishes: string;
+  image: string;
+}
+
+export interface FoodGuide {
+  icon: string;
+  title: string;
+  description: string;
+}
+
 export interface Culture {
   id: string;
   title: string;
@@ -688,6 +702,106 @@ export const restaurants: Restaurant[] = [
       lat: 40.116246,
       lng: 124.37768,
     },
+  },
+];
+
+export const traditionalRestaurants: TraditionalRestaurant[] = [
+  {
+    name: "皇朝海鲜酒店",
+    price: "人均: ¥194",
+    address: "边境经济合作区口岸贸易区l区B座101室",
+    dishes: "皇朝酱蟹，黄蚬子",
+    image: "/images/food/皇朝酒店.png"
+  },
+  {
+    name: "老字号杨家吊炉饼",
+    price: "人均: ¥12",
+    address: "十一经街9号",
+    dishes: "吊炉饼，豆腐汤",
+    image: "/images/food/老字号杨家吊炉饼.png"
+  },
+  {
+    name: "邢记侨光拉面一部(兴七路店)",
+    price: "人均: ¥17",
+    address: "青年大街64号",
+    dishes: "牛肉拉面，焖子",
+    image: "/images/food/邢记侨光拉面一部(兴七路店).png"
+  },
+  {
+    name: "八街老太太",
+    price: "人均: ¥58",
+    address: "八经街冬梅烟酒超市旁（预约）",
+    dishes: "小牛肋条，牛肉串",
+    image: "/images/food/八街老太太.png"
+  },
+  {
+    name: "永盛海鲜家常菜(黄海大道店)",
+    price: "人均: ¥115",
+    address: "黄海大道与中央大道交叉口",
+    dishes: "黄蚬子，大鱿鱼",
+    image: "/images/food/永盛海鲜家常菜(黄海大道店).png"
+  },
+  {
+    name: "果园核桃烤肉",
+    price: "人均: ¥96",
+    address: "201国道鸭绿江村一组",
+    dishes: "牛肉，鱿鱼",
+    image: "/images/food/果园核桃烤肉.png"
+  },
+  {
+    name: "锦龙汤饭(香江佳园店)",
+    price: "人均: ¥49",
+    address: "青年大街香江家园附近",
+    dishes: "牛尾汤，烤五花肉",
+    image: "/images/food/锦龙汤饭(香江佳园店).png"
+  },
+  {
+    name: "赵姨鸡蛋果子(二中小区店)",
+    price: "人均: ¥10",
+    address: "振七北街兴三路交叉口",
+    dishes: "煎饼果子，烤冷面",
+    image: "/images/food/赵姨鸡蛋果子(二中小区店).png"
+  },
+  {
+    name: "佳和饺子馆(江城大街店)",
+    price: "人均: ¥45",
+    address: "江城大街244-8号",
+    dishes: "白菜海螺水饺，海胆馅饺子",
+    image: "/images/food/佳和饺子馆(江城大街店).png"
+  },
+  {
+    name: "金珠打糕(火车站店)",
+    price: "人均: ¥21",
+    address: "五经街站前大市场对面",
+    dishes: "原味打糕，豆面打糕",
+    image: "/images/food/金珠打糕(火车站店).png"
+  }
+];
+
+export const foodGuides: FoodGuide[] = [
+  {
+    icon: "🍽️",
+    title: "寻找当地人推荐",
+    description:
+      "选择当地人经常光顾的餐厅，能品尝到最正宗的美食。东港菜市场附近的小餐馆往往是隐藏的美食宝藏。",
+  },
+  {
+    icon: "🦐",
+    title: "了解海鲜季节",
+    description:
+      "不同季节有不同的海鲜上市。春季尝海蛎子，夏秋品尝梭子蟹，冬季享用温泉煮海鲜，才能体验到最佳口感。",
+  },
+  {
+    icon: "🥢",
+    title: "尝试朝鲜族美食",
+    description:
+      "丹东的朝鲜族美食独具特色，冷面、打糕、辣白菜都是不容错过的美食体验。",
+  },
+  {
+    icon: "💰",
+    title: "价格参考",
+    description:
+      "海鲜市场购买后加工费用约15-30元/斤；朝鲜族冷面约25-35元/碗；特色餐厅人均消费100-200元。",
   },
 ];
 
@@ -1330,4 +1444,44 @@ export const checkInSpots = [
     location: "丹东市振兴区丹东国门景区",
     categories: ["景点", "历史", "拍照"],
   },
+];
+
+export const recommendedHotels: Hotel[] = [
+  {
+    name: "中联大酒店",
+    description: "位于断桥对面的高档酒店，预订江景房可直接观赏鸭绿江和断桥美景，视角绝佳。晚上可欣赏到中朝两国的夜景对比，中方灯火辉煌，朝方漆黑一片，独特的边境体验。",
+    address: "丹东市振兴区鸭绿江畔",
+    phone: "0415-3164888",
+    priceRange: "¥400-800/晚 (江景房稍贵但值得)",
+    image: "https://files.dandong.gov.cn//files/CMS/2022-08-10/1660116892150062.jpg",
+    rating: "推荐指数: ★★★★★",
+    tips: [
+      "提前预订江景房，视野最佳",
+      "高楼层(15层以上)景观更佳",
+      "酒店距离断桥和主要景点步行即可到达",
+      "房间备有望远镜，可以更清晰地观察朝鲜一侧"
+    ],
+    features: [
+      {
+        title: "绝佳位置",
+        description: "位于断桥对面，步行可达主要景点和餐厅"
+      },
+      {
+        title: "无敌江景",
+        description: "江景房可直观鸭绿江全景和断桥美景"
+      },
+      {
+        title: "边境体验",
+        description: "观察中朝两国风光差异，感受独特边境氛围"
+      },
+      {
+        title: "舒适体验",
+        description: "设施完善，服务贴心，提供便捷的旅游信息服务"
+      }
+    ],
+    location: {
+      lat: 40.117,
+      lng: 124.395
+    }
+  }
 ];

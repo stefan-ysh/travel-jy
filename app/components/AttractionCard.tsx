@@ -31,6 +31,17 @@ export default function AttractionCard({ attraction, index = 0 }: AttractionCard
     arrows: true,
     beforeChange: (_current: number, next: number) => setCurrentSlide(next),
     className: "attraction-slider",
+    adaptiveHeight: false,
+    fade: true,
+    cssEase: 'linear',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+        }
+      }
+    ]
   };
 
   const openFullImage = (index: number) => {
@@ -85,29 +96,31 @@ export default function AttractionCard({ attraction, index = 0 }: AttractionCard
           animation: `fadeIn 0.5s ease-out forwards ${index * 0.1}s`,
         }}
       >
-        <div className="relative h-48 w-full">
+        <div className="relative h-48 w-full overflow-hidden">
           <Slider {...sliderSettings}>
             {attraction.images.map((image, imageIndex) => (
               <div 
                 key={imageIndex} 
-                className="relative h-48 w-full cursor-pointer"
+                className="relative h-48 w-full cursor-pointer outline-none"
                 onClick={() => openFullImage(imageIndex)}
               >
-                <Image
-                  src={image.url}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={imageIndex === 0}
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-2 text-xs text-white bg-black bg-opacity-50">
-                  {currentSlide === imageIndex && image.alt}
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-30">
-                  <span className="text-white text-sm font-medium px-2 py-1 rounded-full bg-black bg-opacity-50">
-                    点击查看大图
-                  </span>
+                <div className="relative h-full w-full">
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={imageIndex === 0}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-2 text-xs text-white bg-black bg-opacity-50">
+                    {currentSlide === imageIndex && image.alt}
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-30">
+                    <span className="text-white text-sm font-medium px-2 py-1 rounded-full bg-black bg-opacity-50">
+                      点击查看大图
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}

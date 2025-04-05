@@ -5,10 +5,24 @@
   height: 100%;
 }
 
+.attraction-slider .slick-slider {
+  width: 100%;
+  height: 100%;
+}
+
+.attraction-slider .slick-list,
+.attraction-slider .slick-track {
+  height: 100%;
+}
+
 .attraction-slider .slick-slide {
   position: relative;
-  height: 12rem; /* Ensuring consistent height with parent container */
+  height: 100%;
   overflow: hidden;
+}
+
+.attraction-slider .slick-slide > div {
+  height: 100%;
 }
 
 .attraction-slider .slick-slide img {
@@ -27,11 +41,21 @@
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   transition: all 0.2s ease;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.attraction-slider:hover .slick-prev,
+.attraction-slider:hover .slick-next {
+  opacity: 1;
 }
 
 .attraction-slider .slick-prev:hover,
 .attraction-slider .slick-next:hover {
   background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
 }
 
 .attraction-slider .slick-prev {
@@ -47,6 +71,7 @@
   color: #333;
   opacity: 0.8;
   font-size: 20px;
+  line-height: 1;
 }
 
 .attraction-slider .slick-dots {
@@ -59,20 +84,36 @@
   white-space: nowrap;
   max-width: 100%;
   padding: 0 20px;
+  z-index: 5;
+  position: absolute;
 }
 
 .attraction-slider .slick-dots li {
   margin: 0 2px;
+  width: 20px;
+  height: 3px;
+}
+
+.attraction-slider .slick-dots li button {
+  width: 20px;
+  height: 3px;
+  padding: 0;
 }
 
 .attraction-slider .slick-dots li button:before {
-  color: white;
+  content: "";
+  width: 20px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 1.5px;
   opacity: 0.8;
-  font-size: 8px;
+  color: transparent;
+  top: 0;
+  left: 0;
 }
 
 .attraction-slider .slick-dots li.slick-active button:before {
-  color: white;
+  background-color: white;
   opacity: 1;
 }
 
@@ -87,4 +128,27 @@
   background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
   pointer-events: none;
   z-index: 1;
+}
+
+/* Fix for mobile responsiveness */
+@media (max-width: 768px) {
+  .attraction-slider .slick-prev,
+  .attraction-slider .slick-next {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .attraction-slider .slick-prev:before,
+  .attraction-slider .slick-next:before {
+    font-size: 16px;
+  }
+  
+  .attraction-slider .slick-dots {
+    bottom: 5px;
+    padding: 0 10px;
+  }
+  
+  .attraction-slider .slick-dots li button:before {
+    font-size: 6px;
+  }
 } 
