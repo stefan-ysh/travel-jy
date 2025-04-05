@@ -18,6 +18,26 @@ export interface Attraction {
   tags: string[];
 }
 
+export interface Hotel {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  location: {
+    lat: number;
+    lng: number;
+  };
+  priceRange: string;
+  tips: string[];
+  rating: string;
+  address: string;
+  phone: string;
+  features: {
+    title: string;
+    description: string;
+  }[];
+}
+
 export interface FoodSpot {
   id: string;
   name: string;
@@ -1448,6 +1468,7 @@ export const checkInSpots = [
 
 export const recommendedHotels: Hotel[] = [
   {
+    id: "zhonglian-hotel",
     name: "中联大酒店",
     description: "位于断桥对面的高档酒店，预订江景房可直接观赏鸭绿江和断桥美景，视角绝佳。晚上可欣赏到中朝两国的夜景对比，中方灯火辉煌，朝方漆黑一片，独特的边境体验。",
     address: "丹东市振兴区鸭绿江畔",
