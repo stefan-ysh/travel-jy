@@ -17,6 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="丹东旅游攻略 - 探索鸭绿江畔的魅力之城" />
+        <meta name="keywords" content="丹东, 旅游, 攻略, 景点, 美食, 文化, 路线" />
+        <meta name="author" content="丹东旅游攻略" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <script defer src="https://umami.tiantian.group/script.js" data-website-id="a071602f-e623-40d9-a4c4-6a7fcd55e9a1"></script>
+      </head>
       <body className={inter.className}>
         <main className="min-h-screen bg-gray-50">
           {children}
